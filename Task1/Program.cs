@@ -34,18 +34,33 @@ namespace Task1
 
             //task 3
             //Even or Odd Checker
-            Console.WriteLine("entre even number  ");
-            int evennum = int.Parse(Console.ReadLine());
+            //Console.WriteLine("entre even number  ");
+            //int evennum = int.Parse(Console.ReadLine());
 
-            if (evennum % 2 == 0)
+            //if (evennum % 2 == 0)
+            //{
+            //    Console.WriteLine(evennum + "number is even");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(evennum + "number  is odd");
+            //}
+
+            // task 4
+            // Voting Eligibility
+            Console.Write("Enter your age: ");
+            int age = int.Parse(Console.ReadLine());
+            Console.WriteLine("valid national ID ? (yes/no ");
+            string answare = Console.ReadLine();
+            bool hasValidId = (answare == "yes");
+            if (age >= 18 && hasValidId)
             {
-                Console.WriteLine(evennum + "number is even");
+                Console.WriteLine("eligible to vote");
             }
             else
             {
-                Console.WriteLine(evennum + "number  is odd");
+                Console.WriteLine(" no eligible to vote");
             }
-
         }
     }
 }
