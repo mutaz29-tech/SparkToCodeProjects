@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 
 namespace Task1
 {
@@ -63,34 +64,58 @@ namespace Task1
             //}
             //task 5
             // Grade Letter Lookup
-            Console.WriteLine("enter a single character representing a grade :");
-            String grade = Console.ReadLine();
-            switch (grade)
+            //Console.WriteLine("enter a single character representing a grade :");
+            //String grade = Console.ReadLine();
+            //switch (grade)
+            //{
+            //    case "A":
+            //        Console.WriteLine("Excellent");
+            //        break;
+            //    case "B":
+            //        Console.WriteLine("Very Good");
+            //        break;
+            //    case "C":
+            //        Console.WriteLine("Good");
+            //        break;
+            //    case "D":
+            //        Console.WriteLine("Pass");
+            //        break;
+            //    case "F":
+            //        Console.WriteLine("Fail");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid grade");
+            //        break;
+
+            // task 6
+            //Temperature Converter
+
+            Console.Write("Enter temperature in Celsius: ");
+            double C = double.Parse(Console.ReadLine());
+            double Fahrenheit = (C * 9 / 5) + 32;
+            string weather;
+            if (C < 10)
             {
-                case "A":
-                    Console.WriteLine("Excellent");
-                    break;
-                case "B":
-                    Console.WriteLine("Very Good");
-                    break;
-                case "C":
-                    Console.WriteLine("Good");
-                    break;
-                case "D":
-                    Console.WriteLine("Pass");
-                    break;
-                case "F":
-                    Console.WriteLine("Fail");
-                    break;
-                default:
-                    Console.WriteLine("Invalid grade");
-                    break;
-
-
-
-
-
+                weather = "cold";
             }
-        }
+            else if (C <= 30)
+            {
+                weather = "Mild";
+            }
+            else
+            {
+                weather = "Hot";
+            }
+
+            Console.WriteLine("Temperature in Fahrenheit: " + Fahrenheit);
+            Console.WriteLine("Weather Classification: " + weather);
+
+
+
+
+
+
+        
+    }
     }
 }
