@@ -241,37 +241,98 @@ namespace Task1
             //task 11
             // Loan Eligibility System
 
-            Console.Write("Enter your age: ");
-            int age = int.Parse(Console.ReadLine());
-            Console.Write("Enter your monthly income (OMR): ");
-            double income = double.Parse(Console.ReadLine());
-            Console.Write("Do you have an existing loan? (yes/no): ");
-            string answer =Console.ReadLine();
-            bool ExistingLoan = (answer == "yes");
+            //Console.Write("Enter your age: ");
+            //int age = int.Parse(Console.ReadLine());
+            //Console.Write("Enter your monthly income (OMR): ");
+            //double income = double.Parse(Console.ReadLine());
+            //Console.Write("Do you have an existing loan? (yes/no): ");
+            //string answer =Console.ReadLine();
+            //bool ExistingLoan = (answer == "yes");
 
-            if (age >= 21 && age <= 60 && income >= 400 && !hasExistingLoan)
-            {
-                Console.WriteLine("Eligible for the loan.");
-            }
-            else
-            {
-                Console.WriteLine("Not eligible for the loan.");
+            //if (age >= 21 && age <= 60 && income >= 400 && !ExistingLoan)
+            //{
+            //    Console.WriteLine("Eligible for the loan.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not eligible for the loan.");
 
-                if (age < 21 || age > 60)
+            //    if (age < 21 || age > 60)
+            //    {
+            //        Console.WriteLine("Reason: Age is out of the eligible range (21-60).");
+            //    }
+            //    else if (income < 400)
+            //    {
+            //        Console.WriteLine("Reason: Monthly income is too low.");
+            //    }
+
+            //    else if (ExistingLoan)
+            //    {
+            //        Console.WriteLine("Reason: Applicant has an existing loan.");
+
+            //    }
+            //}
+
+            //task 12 
+            //Shipping Cost Calculator
+                Console.Write("Enter region code (A = Local, B = National, C = International): ");
+                char region = char.Parse(Console.ReadLine());
+
+                Console.Write("Enter package weight (kg): ");
+                double weight = double.Parse(Console.ReadLine());
+
+                double baseCost = 0;
+                double extraCharge = 0;
+
+                switch (region)
                 {
-                    Console.WriteLine("Reason: Age is out of the eligible range (21-60).");
+                    case 'A':
+                        baseCost = 1.000;
+
+                        if (weight > 10)
+                            extraCharge = 5.000;
+                        else if (weight > 5)
+                            extraCharge = 2.000;
+
+                        Console.WriteLine("Region: Local");
+                        Console.WriteLine("Base Cost: " + baseCost.ToString("F3") + " OMR");
+                        Console.WriteLine("Extra Charge: " + extraCharge.ToString("F3") + " OMR");
+                        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge).ToString("F3") + " OMR");
+                        break;
+
+                    case 'B':
+                        baseCost = 3.000;
+
+                        if (weight > 10)
+                            extraCharge = 5.000;
+                        else if (weight > 5)
+                            extraCharge = 2.000;
+
+                        Console.WriteLine("Region: National");
+                        Console.WriteLine("Base Cost: " + baseCost + " OMR");
+                        Console.WriteLine("Extra Charge: " + extraCharge + " OMR");
+                        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge)+ " OMR");
+                        break;
+
+                    case 'C':
+                        baseCost = 7.000;
+
+                        if (weight > 10)
+                            extraCharge = 5.000;
+                        else if (weight > 5)
+                            extraCharge = 2.000;
+
+                        Console.WriteLine("Region: International");
+                        Console.WriteLine("Base Cost: " + baseCost + " OMR");
+                        Console.WriteLine("Extra Charge: " + extraCharge+ " OMR");
+                        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge)+ " OMR");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid region");
+                        break;
                 }
-                else if (income < 400)
-                {
-                    Console.WriteLine("Reason: Monthly income is too low.");
-                }
-
-                else if (ExistingLoan)
-                {
-                    Console.WriteLine("Reason: Applicant has an existing loan.");
-
-                }
-            }
+            
 
 
 
@@ -284,8 +345,6 @@ namespace Task1
 
 
 
-
-
-            }
-            }
+    }
+    }
 }
