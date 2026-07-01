@@ -156,35 +156,86 @@ namespace Task1
 
             //task 9 
             // Day Name Finder
-            Console.WriteLine("enter a number from 1 to 7");
-            int daynumber= int.Parse(Console.ReadLine());
-            switch (daynumber) {
-                case 1:
-                    Console.WriteLine("Sunday");
+            //Console.WriteLine("enter a number from 1 to 7");
+            //int daynumber= int.Parse(Console.ReadLine());
+            //switch (daynumber) {
+            //    case 1:
+            //        Console.WriteLine("Sunday");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("Monday");
+            //        break;
+            //     case 3:
+            //        Console.WriteLine("Tuesday");
+            //        break;
+            //     case 4:
+            //        Console.WriteLine("Wednesday");
+            //        break;
+            //      case 5:
+            //        Console.WriteLine("Thursday");
+            //        break;
+            //      case 6:
+            //        Console.WriteLine("Friday");
+            //        break;
+            //    case 7:
+            //        Console.WriteLine("Saturday");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid day number");
+            //        break;}
+
+            //task 10 
+            //Mini Calculator
+
+            Console.Write("Enter the first number: ");
+            double num1 = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            double num2 = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter an operator (+, -, *, /, %): ");
+            char op = char.Parse(Console.ReadLine());
+
+            switch (op)
+            {
+                case '+':
+                    Console.WriteLine("Result: " + (num1 + num2));
                     break;
-                case 2:
-                    Console.WriteLine("Monday");
+
+                case '-':
+                    Console.WriteLine("Result: " + (num1 - num2));
                     break;
-                 case 3:
-                    Console.WriteLine("Tuesday");
+
+                case '*':
+                    Console.WriteLine("Result: " + (num1 * num2));
                     break;
-                 case 4:
-                    Console.WriteLine("Wednesday");
+
+                case '/':
+                    if (num2 != 0)
+                    {
+                        Console.WriteLine("Result: " + (num1 / num2));
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Cannot divide by zero");
+                    }
                     break;
-                  case 5:
-                    Console.WriteLine("Thursday");
+
+                case '%':
+                    if (num2 != 0)
+                    {
+                        Console.WriteLine("Result: " + (num1 % num2));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Cannot divide by zero");
+                    }
                     break;
-                  case 6:
-                    Console.WriteLine("Friday");
-                    break;
-                case 7:
-                    Console.WriteLine("Saturday");
-                    break;
+
                 default:
-                    Console.WriteLine("Invalid day number");
+                    Console.WriteLine("Invalid operator");
                     break;
-
-
             }
 
 
@@ -192,6 +243,14 @@ namespace Task1
 
 
 
+
+
+
+                    
+
+
+
+
+            }
         }
-    }
 }
