@@ -112,28 +112,48 @@ namespace Task1
 
             // task 7 
             //Movie Ticket Pricing
-            Console.WriteLine("enter your age: ");
-            int age = int.Parse(Console.ReadLine());
-            string category;
-            double price;
-            if (age > 0 && age <= 12)
-            {
-                category = "Children";
-                price = 2.000;
-            }
-            else if (age <= 59)
-            {
-                category = "Adults";
-                price = 5.000;
-            }
-            else
-            {
-                category = "Seniors";
-                price = 3.000;
-            }
+            //Console.WriteLine("enter your age: ");
+            //int age = int.Parse(Console.ReadLine());
+            //string category;
+            //double price;
+            //if (age > 0 && age <= 12)
+            //{
+            //    category = "Children";
+            //    price = 2.000;
+            //}
+            //else if (age <= 59)
+            //{
+            //    category = "Adults";
+            //    price = 5.000;
+            //}
+            //else
+            //{
+            //    category = "Seniors";
+            //    price = 3.000;
+            //}
 
-            Console.WriteLine("Category: " + category);
-            Console.WriteLine("Ticket Price: " + price + " OMR");
+            //Console.WriteLine("Category: " + category);
+            //Console.WriteLine("Ticket Price: " + price + " OMR");
+
+            //task 8
+            //Restaurant Bill with Membership Discount
+            Console.WriteLine("total bill amount ");
+            double billamount = double.Parse(Console.ReadLine());
+            Console.WriteLine("are a loyalty member (yes/no)");
+            string loyalmm= Console.ReadLine();
+            bool ismember = (loyalmm == "yes");
+            double discount = 0;
+
+            if (billamount > 20 && ismember) {
+                discount = billamount * 0.15;
+            }
+            double finalAmount = billamount - discount;
+
+            Console.WriteLine(" Bill Summary");
+            Console.WriteLine("Original Bill: " + billamount + " OMR");
+            Console.WriteLine("Discount: " + discount + " OMR");
+            Console.WriteLine("Final Amount to Pay: " + finalAmount + " OMR");
+
 
 
 
