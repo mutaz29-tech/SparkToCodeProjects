@@ -375,49 +375,111 @@ namespace Task1
             //task 14
             //Online Store Checkout
 
-            Console.Write("Enter product code (1=Headphones, 2=Keyboard, 3=Mouse): ");
-            int productCode = int.Parse(Console.ReadLine());
-            Console.Write("Enter quantity: ");
-            int quantity = int.Parse(Console.ReadLine());
-            Console.Write("Do you have a discount coupon? (yes/no): ");
+            //Console.Write("Enter product code (1=Headphones, 2=Keyboard, 3=Mouse): ");
+            //int productCode = int.Parse(Console.ReadLine());
+            //Console.Write("Enter quantity: ");
+            //int quantity = int.Parse(Console.ReadLine());
+            //Console.Write("Do you have a discount coupon? (yes/no): ");
+            //string answer = Console.ReadLine();
+            //bool hasCoupon = (answer == "yes");
+            //string productName = "";
+            //double unitPrice = 0;
+            //switch (productCode)
+            //{
+            //    case 1:
+            //        productName = "Headphones";
+            //        unitPrice = 8.500;
+            //        break;
+            //    case 2:
+            //        productName = "Keyboard";
+            //        unitPrice = 12.000;
+            //        break;
+            //    case 3:
+            //        productName = "Mouse";
+            //        unitPrice = 5.000;
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid product code");
+            //        return;
+            //}
+
+            //double subtotal = unitPrice * quantity;
+            //double discount = 0;
+            //if (hasCoupon && subtotal > 20)
+            //{
+            //    discount = subtotal * 0.10; 
+            //}
+            //double amountAfterDiscount = subtotal - discount;
+            //double tax = amountAfterDiscount * 0.05; 
+            //double finalTotal = amountAfterDiscount + tax;
+            //Console.WriteLine(" Checkout Summary");
+            //Console.WriteLine("Product: " + productName);
+            //Console.WriteLine("Subtotal: " + subtotal + " OMR");
+            //Console.WriteLine("Discount: " + discount + " OMR");
+            //Console.WriteLine("Tax: " + tax + " OMR");
+            //Console.WriteLine("Final Total: " + finalTotal+ " OMR");
+
+            //task 15
+            // University Admission Decision
+            Console.Write("Enter program type : ");
+            char programType = char.Parse(Console.ReadLine());
+            Console.Write("Enter GPA : ");
+            double gpa = double.Parse(Console.ReadLine());
+            Console.Write("Enter entrance exam score : ");
+            double examScore = double.Parse(Console.ReadLine());
+            Console.Write("Do you have an extracurricular achievement? (yes/no): ");
             string answer = Console.ReadLine();
-            bool hasCoupon = (answer == "yes");
-            string productName = "";
-            double unitPrice = 0;
-            switch (productCode)
+            bool hasAchievement = (answer == "yes");
+            string programName = "";
+            string result = "";
+
+            switch (programType)
             {
-                case 1:
-                    productName = "Headphones";
-                    unitPrice = 8.500;
+                case 'S':
+                    programName = "Science";
+                    if (gpa >= 3.0 && examScore >= 75)
+                    {
+                        result = "Admitted";
+                    }
+                    else if (hasAchievement)
+                    {
+                        result = "Conditionally Admitted";
+                    }
+                    else
+                    {
+                        result = "Not Admitted";
+                    }
                     break;
-                case 2:
-                    productName = "Keyboard";
-                    unitPrice = 12.000;
-                    break;
-                case 3:
-                    productName = "Mouse";
-                    unitPrice = 5.000;
+
+                case 'A':
+                    programName = "Arts";
+
+                    if (gpa >= 2.5 && examScore >= 60)
+                    {
+                        result = "Admitted";
+                    }
+                    else if (hasAchievement)
+                    {
+                        result = "Conditionally Admitted";
+                    }
+
+                    else
+                    {
+                        result = "Not Admitted";
+                    }
                     break;
                 default:
-                    Console.WriteLine("Invalid product code");
+                    Console.WriteLine("Invalid program type");
                     return;
             }
 
-            double subtotal = unitPrice * quantity;
-            double discount = 0;
-            if (hasCoupon && subtotal > 20)
-            {
-                discount = subtotal * 0.10; 
-            }
-            double amountAfterDiscount = subtotal - discount;
-            double tax = amountAfterDiscount * 0.05; 
-            double finalTotal = amountAfterDiscount + tax;
-            Console.WriteLine(" Checkout Summary");
-            Console.WriteLine("Product: " + productName);
-            Console.WriteLine("Subtotal: " + subtotal + " OMR");
-            Console.WriteLine("Discount: " + discount + " OMR");
-            Console.WriteLine("Tax: " + tax + " OMR");
-            Console.WriteLine("Final Total: " + finalTotal+ " OMR");
+            Console.WriteLine(" Admission Result");
+            Console.WriteLine("Program: " + programName);
+            Console.WriteLine("Status: " + result);
+
+
+
+
 
 
 
