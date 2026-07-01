@@ -48,18 +48,48 @@ namespace Task1
 
             // task 4
             // Voting Eligibility
-            Console.Write("Enter your age: ");
-            int age = int.Parse(Console.ReadLine());
-            Console.WriteLine("valid national ID ? (yes/no ");
-            string answare = Console.ReadLine();
-            bool hasValidId = (answare == "yes");
-            if (age >= 18 && hasValidId)
+            //Console.Write("Enter your age: ");
+            //int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("valid national ID ? (yes/no ");
+            //string answare = Console.ReadLine();
+            //bool hasValidId = (answare == "yes");
+            //if (age >= 18 && hasValidId)
+            //{
+            //    Console.WriteLine("eligible to vote");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(" no eligible to vote");
+            //}
+            //task 5
+            // Grade Letter Lookup
+            Console.WriteLine("enter a single character representing a grade :");
+            String grade = Console.ReadLine();
+            switch (grade)
             {
-                Console.WriteLine("eligible to vote");
-            }
-            else
-            {
-                Console.WriteLine(" no eligible to vote");
+                case "A":
+                    Console.WriteLine("Excellent");
+                    break;
+                case "B":
+                    Console.WriteLine("Very Good");
+                    break;
+                case "C":
+                    Console.WriteLine("Good");
+                    break;
+                case "D":
+                    Console.WriteLine("Pass");
+                    break;
+                case "F":
+                    Console.WriteLine("Fail");
+                    break;
+                default:
+                    Console.WriteLine("Invalid grade");
+                    break;
+
+
+
+
+
             }
         }
     }
