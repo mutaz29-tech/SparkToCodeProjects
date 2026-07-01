@@ -137,24 +137,55 @@ namespace Task1
 
             //task 8
             //Restaurant Bill with Membership Discount
-            Console.WriteLine("total bill amount ");
-            double billamount = double.Parse(Console.ReadLine());
-            Console.WriteLine("are a loyalty member (yes/no)");
-            string loyalmm= Console.ReadLine();
-            bool ismember = (loyalmm == "yes");
-            double discount = 0;
+            //Console.WriteLine("total bill amount ");
+            //double billamount = double.Parse(Console.ReadLine());
+            //Console.WriteLine("are a loyalty member (yes/no)");
+            //string loyalmm= Console.ReadLine();
+            //bool ismember = (loyalmm == "yes");
+            //double discount = 0;
 
-            if (billamount > 20 && ismember) {
-                discount = billamount * 0.15;
+            //if (billamount > 20 && ismember) {
+            //    discount = billamount * 0.15;
+            //}
+            //double finalAmount = billamount - discount;
+
+            //Console.WriteLine(" Bill Summary");
+            //Console.WriteLine("Original Bill: " + billamount + " OMR");
+            //Console.WriteLine("Discount: " + discount + " OMR");
+            //Console.WriteLine("Final Amount to Pay: " + finalAmount + " OMR");
+
+            //task 9 
+            // Day Name Finder
+            Console.WriteLine("enter a number from 1 to 7");
+            int daynumber= int.Parse(Console.ReadLine());
+            switch (daynumber) {
+                case 1:
+                    Console.WriteLine("Sunday");
+                    break;
+                case 2:
+                    Console.WriteLine("Monday");
+                    break;
+                 case 3:
+                    Console.WriteLine("Tuesday");
+                    break;
+                 case 4:
+                    Console.WriteLine("Wednesday");
+                    break;
+                  case 5:
+                    Console.WriteLine("Thursday");
+                    break;
+                  case 6:
+                    Console.WriteLine("Friday");
+                    break;
+                case 7:
+                    Console.WriteLine("Saturday");
+                    break;
+                default:
+                    Console.WriteLine("Invalid day number");
+                    break;
+
+
             }
-            double finalAmount = billamount - discount;
-
-            Console.WriteLine(" Bill Summary");
-            Console.WriteLine("Original Bill: " + billamount + " OMR");
-            Console.WriteLine("Discount: " + discount + " OMR");
-            Console.WriteLine("Final Amount to Pay: " + finalAmount + " OMR");
-
-
 
 
 
