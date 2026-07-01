@@ -90,32 +90,57 @@ namespace Task1
             // task 6
             //Temperature Converter
 
-            Console.Write("Enter temperature in Celsius: ");
-            double C = double.Parse(Console.ReadLine());
-            double Fahrenheit = (C * 9 / 5) + 32;
-            string weather;
-            if (C < 10)
+            //Console.Write("Enter temperature in Celsius: ");
+            //double C = double.Parse(Console.ReadLine());
+            //double Fahrenheit = (C * 9 / 5) + 32;
+            //string weather;
+            //if (C < 10)
+            //{
+            //    weather = "cold";
+            //}
+            //else if (C <= 30)
+            //{
+            //    weather = "Mild";
+            //}
+            //else
+            //{
+            //    weather = "Hot";
+            //}
+
+            //Console.WriteLine("Temperature in Fahrenheit: " + Fahrenheit);
+            //Console.WriteLine("Weather Classification: " + weather);
+
+            // task 7 
+            //Movie Ticket Pricing
+            Console.WriteLine("enter your age: ");
+            int age = int.Parse(Console.ReadLine());
+            string category;
+            double price;
+            if (age > 0 && age <= 12)
             {
-                weather = "cold";
+                category = "Children";
+                price = 2.000;
             }
-            else if (C <= 30)
+            else if (age <= 59)
             {
-                weather = "Mild";
+                category = "Adults";
+                price = 5.000;
             }
             else
             {
-                weather = "Hot";
+                category = "Seniors";
+                price = 3.000;
             }
 
-            Console.WriteLine("Temperature in Fahrenheit: " + Fahrenheit);
-            Console.WriteLine("Weather Classification: " + weather);
+            Console.WriteLine("Category: " + category);
+            Console.WriteLine("Ticket Price: " + price + " OMR");
 
 
 
 
 
 
-        
-    }
+
+        }
     }
 }
