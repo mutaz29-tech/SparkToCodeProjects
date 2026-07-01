@@ -275,64 +275,107 @@ namespace Task1
 
             //task 12 
             //Shipping Cost Calculator
-                Console.Write("Enter region code (A = Local, B = National, C = International): ");
-                char region = char.Parse(Console.ReadLine());
+            //Console.Write("Enter region code (A = Local, B = National, C = International): ");
+            //char region = char.Parse(Console.ReadLine());
 
-                Console.Write("Enter package weight (kg): ");
-                double weight = double.Parse(Console.ReadLine());
+            //Console.Write("Enter package weight (kg): ");
+            //double weight = double.Parse(Console.ReadLine());
 
-                double baseCost = 0;
-                double extraCharge = 0;
+            //double baseCost = 0;
+            //double extraCharge = 0;
 
-                switch (region)
+            //switch (region)
+            //{
+            //    case 'A':
+            //        baseCost = 1.000;
+
+            //        if (weight > 10)
+            //            extraCharge = 5.000;
+            //        else if (weight > 5)
+            //            extraCharge = 2.000;
+
+            //        Console.WriteLine("Region: Local");
+            //        Console.WriteLine("Base Cost: " + baseCost.ToString("F3") + " OMR");
+            //        Console.WriteLine("Extra Charge: " + extraCharge.ToString("F3") + " OMR");
+            //        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge).ToString("F3") + " OMR");
+            //        break;
+
+            //    case 'B':
+            //        baseCost = 3.000;
+
+            //        if (weight > 10)
+            //            extraCharge = 5.000;
+            //        else if (weight > 5)
+            //            extraCharge = 2.000;
+
+            //        Console.WriteLine("Region: National");
+            //        Console.WriteLine("Base Cost: " + baseCost + " OMR");
+            //        Console.WriteLine("Extra Charge: " + extraCharge + " OMR");
+            //        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge)+ " OMR");
+            //        break;
+
+            //    case 'C':
+            //        baseCost = 7.000;
+
+            //        if (weight > 10)
+            //            extraCharge = 5.000;
+            //        else if (weight > 5)
+            //            extraCharge = 2.000;
+
+            //        Console.WriteLine("Region: International");
+            //        Console.WriteLine("Base Cost: " + baseCost + " OMR");
+            //        Console.WriteLine("Extra Charge: " + extraCharge+ " OMR");
+            //        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge)+ " OMR");
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid region");
+            //        break;
+            //}
+
+
+            //task 13
+            //Triangle Type Classifier
+
+            Console.Write("Enter the first side: ");
+            double side1 = double.Parse(Console.ReadLine());
+            Console.Write("Enter the second side: ");
+            double side2 = double.Parse(Console.ReadLine());
+            Console.Write("Enter the third side: ");
+            double side3 = double.Parse(Console.ReadLine());
+            //valid triangle
+            if ((side1 + side2 > side3) &&
+                        (side1 + side3 > side2) &&
+                        (side2 + side3 > side1))
+            {
+                Console.WriteLine("The sides form a valid triangle.");
+
+                if (side1 == side2 && side2 == side3)
                 {
-                    case 'A':
-                        baseCost = 1.000;
-
-                        if (weight > 10)
-                            extraCharge = 5.000;
-                        else if (weight > 5)
-                            extraCharge = 2.000;
-
-                        Console.WriteLine("Region: Local");
-                        Console.WriteLine("Base Cost: " + baseCost.ToString("F3") + " OMR");
-                        Console.WriteLine("Extra Charge: " + extraCharge.ToString("F3") + " OMR");
-                        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge).ToString("F3") + " OMR");
-                        break;
-
-                    case 'B':
-                        baseCost = 3.000;
-
-                        if (weight > 10)
-                            extraCharge = 5.000;
-                        else if (weight > 5)
-                            extraCharge = 2.000;
-
-                        Console.WriteLine("Region: National");
-                        Console.WriteLine("Base Cost: " + baseCost + " OMR");
-                        Console.WriteLine("Extra Charge: " + extraCharge + " OMR");
-                        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge)+ " OMR");
-                        break;
-
-                    case 'C':
-                        baseCost = 7.000;
-
-                        if (weight > 10)
-                            extraCharge = 5.000;
-                        else if (weight > 5)
-                            extraCharge = 2.000;
-
-                        Console.WriteLine("Region: International");
-                        Console.WriteLine("Base Cost: " + baseCost + " OMR");
-                        Console.WriteLine("Extra Charge: " + extraCharge+ " OMR");
-                        Console.WriteLine("Total Shipping Cost: " + (baseCost + extraCharge)+ " OMR");
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid region");
-                        break;
+                    Console.WriteLine("Triangle Type: Equilateral");
                 }
-            
+                else
+                {
+                    if (side1 == side2 || side1 == side3 || side2 == side3)
+                    {
+                        Console.WriteLine("Triangle Type: Isosceles");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Triangle Type: Scalene");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("The sides do not form a valid triangle.");
+            }
+        
+
+
+
+
 
 
 
@@ -346,5 +389,5 @@ namespace Task1
 
 
     }
-    }
+}
 }
