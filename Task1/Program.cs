@@ -337,41 +337,87 @@ namespace Task1
             //task 13
             //Triangle Type Classifier
 
-            Console.Write("Enter the first side: ");
-            double side1 = double.Parse(Console.ReadLine());
-            Console.Write("Enter the second side: ");
-            double side2 = double.Parse(Console.ReadLine());
-            Console.Write("Enter the third side: ");
-            double side3 = double.Parse(Console.ReadLine());
-            //valid triangle
-            if ((side1 + side2 > side3) &&
-                        (side1 + side3 > side2) &&
-                        (side2 + side3 > side1))
+            //Console.Write("Enter the first side: ");
+            //double side1 = double.Parse(Console.ReadLine());
+            //Console.Write("Enter the second side: ");
+            //double side2 = double.Parse(Console.ReadLine());
+            //Console.Write("Enter the third side: ");
+            //double side3 = double.Parse(Console.ReadLine());
+            ////valid triangle
+            //if ((side1 + side2 > side3) &&
+            //            (side1 + side3 > side2) &&
+            //            (side2 + side3 > side1))
+            //{
+            //    Console.WriteLine("The sides form a valid triangle.");
+
+            //    if (side1 == side2 && side2 == side3)
+            //    {
+            //        Console.WriteLine("Triangle Type: Equilateral");
+            //    }
+            //    else
+            //    {
+            //        if (side1 == side2 || side1 == side3 || side2 == side3)
+            //        {
+            //            Console.WriteLine("Triangle Type: Isosceles");
+            //        }
+
+            //        else
+            //        {
+            //            Console.WriteLine("Triangle Type: Scalene");
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The sides do not form a valid triangle.");
+            //}
+
+            //task 14
+            //Online Store Checkout
+
+            Console.Write("Enter product code (1=Headphones, 2=Keyboard, 3=Mouse): ");
+            int productCode = int.Parse(Console.ReadLine());
+            Console.Write("Enter quantity: ");
+            int quantity = int.Parse(Console.ReadLine());
+            Console.Write("Do you have a discount coupon? (yes/no): ");
+            string answer = Console.ReadLine();
+            bool hasCoupon = (answer == "yes");
+            string productName = "";
+            double unitPrice = 0;
+            switch (productCode)
             {
-                Console.WriteLine("The sides form a valid triangle.");
-
-                if (side1 == side2 && side2 == side3)
-                {
-                    Console.WriteLine("Triangle Type: Equilateral");
-                }
-                else
-                {
-                    if (side1 == side2 || side1 == side3 || side2 == side3)
-                    {
-                        Console.WriteLine("Triangle Type: Isosceles");
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("Triangle Type: Scalene");
-                    }
-                }
+                case 1:
+                    productName = "Headphones";
+                    unitPrice = 8.500;
+                    break;
+                case 2:
+                    productName = "Keyboard";
+                    unitPrice = 12.000;
+                    break;
+                case 3:
+                    productName = "Mouse";
+                    unitPrice = 5.000;
+                    break;
+                default:
+                    Console.WriteLine("Invalid product code");
+                    return;
             }
-            else
+
+            double subtotal = unitPrice * quantity;
+            double discount = 0;
+            if (hasCoupon && subtotal > 20)
             {
-                Console.WriteLine("The sides do not form a valid triangle.");
+                discount = subtotal * 0.10; 
             }
-        
+            double amountAfterDiscount = subtotal - discount;
+            double tax = amountAfterDiscount * 0.05; 
+            double finalTotal = amountAfterDiscount + tax;
+            Console.WriteLine(" Checkout Summary");
+            Console.WriteLine("Product: " + productName);
+            Console.WriteLine("Subtotal: " + subtotal + " OMR");
+            Console.WriteLine("Discount: " + discount + " OMR");
+            Console.WriteLine("Tax: " + tax + " OMR");
+            Console.WriteLine("Final Total: " + finalTotal+ " OMR");
 
 
 
@@ -388,6 +434,11 @@ namespace Task1
 
 
 
+
+
+
+
+
+        }
     }
-}
 }
