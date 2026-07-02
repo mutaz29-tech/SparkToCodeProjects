@@ -80,29 +80,74 @@
             //Console.WriteLine("It took you {attempts} attempts.");
             ////////////////////
             //Task 6 - Safe Division Calculator
-            try
-            {
-                Console.Write("Enter the first number:");
-                int num1 = int.Parse(Console.ReadLine());
+            //try
+            //{
+            //    Console.Write("Enter the first number:");
+            //    int num1 = int.Parse(Console.ReadLine());
 
-                Console.Write("Enter the second number:");
-                int num2 = int.Parse(Console.ReadLine());
+            //    Console.Write("Enter the second number:");
+            //    int num2 = int.Parse(Console.ReadLine());
 
-                int result = num1 / num2;
+            //    int result = num1 / num2;
 
-                Console.WriteLine("resutl is :" + result);
+            //    Console.WriteLine("resutl is :" + result);
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("Error: Division by zero is not allowed.");
+            //}
+
+            //catch (FormatException)
+
+            //{
+            //    Console.WriteLine(" Invalid input");
+            //}
+            ///////////////////////////////////////////////
+
+            ///Task 7 - Repeating Menu with Exit Option
+           
+                
+
+                while (true)
+                {
+                    Console.WriteLine("1. Say Hello");
+                    Console.WriteLine("2. Show Current Time-of-day Greeting");
+                    Console.WriteLine("3. Exit");
+                    Console.Write("Enter your choice: ");
+
+                    try
+                    {
+                        int choice = int.Parse(Console.ReadLine());
+
+                        switch (choice)
+                        {
+                            case 1:
+                                Console.WriteLine("Hello!");
+                                break;
+
+                            case 2:
+                                Console.WriteLine("Good Day! Have a nice day.");
+                                break;
+
+                            case 3:
+                                Console.WriteLine("Exiting program...");
+                               
+                                break;
+
+                            default:
+                                Console.WriteLine("Invalid choice. Please select 1, 2, or 3.");
+                                break;
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Error: Please enter a numeric value.");
+                    }
+                }
             }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Error: Division by zero is not allowed.");
-            }
+        
 
-            catch (FormatException)
-
-            {
-                Console.WriteLine(" Invalid input");
-            }
-        }
     }
-}
+    }
+
     
