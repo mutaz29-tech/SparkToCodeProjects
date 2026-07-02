@@ -143,23 +143,63 @@
             // }
             ///////////////////////////////////////////////////////////////////////////////////////
             ///Task 8 - Sum of Even Numbers Only
-           
-               Console.Write("Enter a positive whole number : ");
-                int N = int.Parse(Console.ReadLine());
-                int sum = 0;
-                for (int i = 1; i <= N; i++)
+            //  Console.Write("Enter a positive whole number : ");
+            //   int N = int.Parse(Console.ReadLine());
+            //   int sum = 0;
+            //   for (int i = 1; i <= N; i++)
+            //   {
+            //// Check if the number is even
+            //       if (i % 2 == 0)
+            //       {
+            //           sum += i;
+            //       }
+            //   }
+
+            //   Console.WriteLine("The sum of all even numbers from 1 to {N} is: {sum}");
+
+            //////////////////////////////////////////////////////////////////
+            ///Task 9 - Validated Positive Number Input            
+                int number = 0;
+                bool validInput = false;
+                // Input loop
+                do
                 {
-             // Check if the number is even
-                    if (i % 2 == 0)
+                    Console.Write("Enter a positive whole number: ");
+
+                    try
                     {
-                        sum += i;
+                        number = int.Parse(Console.ReadLine());
+
+                        if (number > 0)
+                        {
+                            validInput = true;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Error: Please enter a number greater than zero.");
+                        }
                     }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Error: Invalid input. Please enter a whole number.");
+                    }
+
+                } while (!validInput);
+
+                // Sum calculation loop
+                int sum = 0;
+
+                for (int i = 1; i <= number; i++)
+                {
+                    sum += i;
                 }
 
-                Console.WriteLine("The sum of all even numbers from 1 to {N} is: {sum}");
+                Console.WriteLine("The sum of all whole numbers from 1 to {number} is: {sum}");
             }
         }
-   }
+
+    }
+
 
 
    
