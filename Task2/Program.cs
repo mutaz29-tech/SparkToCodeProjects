@@ -14,21 +14,30 @@
             //}
             //Console.WriteLine("Liftoff !");
             //////////////////////////////////
-            
+
 
             ///Task 2 - Sum of Numbers 1 to N
-            Console.WriteLine("Enter positive whole number:");
-            int pnum = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter positive whole number:");
+            //int pnum = int.Parse(Console.ReadLine());
 
-            int sum = 0;
+            //int sum = 0;
 
-            for (int i = 1; i <= pnum; i++)
-            {
-                sum += i;
-            }
-            Console.WriteLine($"The sum is :" + sum);
+            //for (int i = 1; i <= pnum; i++)
+            //{
+            //    sum += i;
+            //}
+            //Console.WriteLine($"The sum is :" + sum);
             /////////////////////
 
+            //Task 3 - Multiplication Table
+            Console.Write("Enter a number :");
+            int num = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine(num + "*" + i + "=" + (num * i));
+            }
+            ////////////////////////////////
         }
     }
 }
