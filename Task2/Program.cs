@@ -55,29 +55,53 @@
             //////////////////
 
             ///Task 5 - Number Guessing Game
-            int secretNumber = 29; // my secret number is 29
-            int gusss;
-            int attempts = 0;
+            //int secretNumber = 29; // my secret number is 29
+            //int gusss;
+            //int attempts = 0;
 
-            do
+            //do
+            //{
+            //    Console.Write("Guess the secret number:");
+            //    gusss = int.Parse(Console.ReadLine());
+            //    attempts++;
+            //    if (gusss > secretNumber)
+            //    {
+            //        Console.WriteLine("Too high");
+            //    }
+            //    else if (gusss < secretNumber)
+            //    {
+            //        Console.WriteLine("Too low.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"you gussed the secret number");
+            //    }
+            //} while (gusss != secretNumber);
+            //Console.WriteLine("It took you {attempts} attempts.");
+            ////////////////////
+            //Task 6 - Safe Division Calculator
+            try
             {
-                Console.Write("Guess the secret number:");
-                gusss = int.Parse(Console.ReadLine());
-                attempts++;
-                if (gusss > secretNumber)
-                {
-                    Console.WriteLine("Too high");
-                }
-                else if (gusss < secretNumber)
-                {
-                    Console.WriteLine("Too low.");
-                }
-                else
-                {
-                    Console.WriteLine($"you gussed the secret number");
-                }
-            } while (gusss != secretNumber);
-            Console.WriteLine("It took you {attempts} attempts.");
+                Console.Write("Enter the first number:");
+                int num1 = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter the second number:");
+                int num2 = int.Parse(Console.ReadLine());
+
+                int result = num1 / num2;
+
+                Console.WriteLine("resutl is :" + result);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: Division by zero is not allowed.");
+            }
+
+            catch (FormatException)
+
+            {
+                Console.WriteLine(" Invalid input");
+            }
         }
     }
 }
