@@ -151,38 +151,58 @@
             ///////////////////////////////////////////////////////
 
             ///Task 11 - One-Time Password (OTP) Generator
-            Random random = new Random();
-            int otp = random.Next(1000, 10000);
+            //Random random = new Random();
+            //int otp = random.Next(1000, 10000);
 
-            Console.WriteLine("Otp has been sent:" + otp); // this line sent me an otp number
+            //Console.WriteLine("Otp has been sent:" + otp); // this line sent me an otp number
 
-            int attempted = 0;
+            //int attempted = 0;
 
-            while (attempted < 3)
+            //while (attempted < 3)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("Enter OTP");
+            //        int userInput = Convert.ToInt32(Console.ReadLine()); // i have to enter the number that they sent me.
+
+            //        if (userInput == otp)
+            //        {
+            //            Console.WriteLine("Verifide");
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Incorecct code.");
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        Console.WriteLine("invalid input");
+            //    }
+            //    attempted++;
+            //}
+            //Console.WriteLine("verified failed");
+            ////////////////////////////////////////////////////////////////////////////////////////////
+
+            ///Task 12 - Birthday Insights
+            try
             {
-                try
+                Console.WriteLine("Enter you birth Date ");
+                DateTime Dofbirth = DateTime.Parse(Console.ReadLine());
+                DateTime today = DateTime.Today;
+                int age = today.Year - Dofbirth.Year;
+                if (today.Month < Dofbirth.Month || (today.Month == Dofbirth.Month && today.Day < Dofbirth.Day))
                 {
-                    Console.WriteLine("Enter OTP");
-                    int userInput = Convert.ToInt32(Console.ReadLine()); // i have to enter the number that they sent me.
-
-                    if (userInput == otp)
-                    {
-                        Console.WriteLine("Verifide");
-                        return;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorecct code.");
-                    }
+                    age = age - 1;
                 }
-                catch
-                {
-                    Console.WriteLine("invalid input");
-                }
-                attempted++;
+                DayOfWeek DayOfBirth = Dofbirth.DayOfWeek;
+                Console.WriteLine("Age:" + age);
+                Console.WriteLine("Born on:" + DayOfBirth);
             }
-            Console.WriteLine("verified failed");
-
+            catch
+            {
+                Console.WriteLine("invalid format");
+            }
 
         }
     }
