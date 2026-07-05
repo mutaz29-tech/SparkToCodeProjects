@@ -23,15 +23,22 @@
             ////////////////////////////////////////////////
 
             ///Task 3 - Name Formatter
-            Console.WriteLine("enter your full name");
-            string name = Console.ReadLine();
-            int length= name.Length;
-            String lower=name.ToLower();
-            String upper = name.ToUpper();
-            Console.WriteLine("length is " + length);
-            Console.WriteLine("lower case is " + lower);
-            Console.WriteLine("upper case is " + upper);
+            //Console.WriteLine("enter your full name");
+            //string name = Console.ReadLine();
+            //int length= name.Length;
+            //String lower=name.ToLower();
+            //String upper = name.ToUpper();
+            //Console.WriteLine("length is " + length);
+            //Console.WriteLine("lower case is " + lower);
+            //Console.WriteLine("upper case is " + upper);
             /////////////////////////////////////////////////////
+
+            //Task 4 - Subscription End Date
+            Console.Write("Enter the number of days for the free trial: ");
+            int trialDays = int.Parse(Console.ReadLine());
+            DateTime startDate = DateTime.Today;
+            DateTime endDate = startDate.AddDays(trialDays);
+            Console.WriteLine("Trial End Date: " + endDate);
 
 
         }
