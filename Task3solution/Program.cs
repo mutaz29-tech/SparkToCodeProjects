@@ -95,30 +95,41 @@
             ///////////////////////////////////////////////////////////////
 
             ///Task 8 - Membership Expiry Checker
-            try
-            {
-                Console.Write("Enter membership start date: ");
-                string inputDate = Console.ReadLine();
-                DateTime startDate = DateTime.Parse(inputDate);
-                Console.Write("Enter number of valid membership days: ");
-                int membershipDays = Convert.ToInt32(Console.ReadLine());
-                DateTime expiryDate = startDate.AddDays(membershipDays);
-                if (expiryDate >= DateTime.Today)
-                {
-                    Console.WriteLine("Status: Active");
-                }
-                else
-                {
-                    Console.WriteLine("Status: Expired");
-                }
+            //try
+            //{
+            //    Console.Write("Enter membership start date: ");
+            //    string inputDate = Console.ReadLine();
+            //    DateTime startDate = DateTime.Parse(inputDate);
+            //    Console.Write("Enter number of valid membership days: ");
+            //    int membershipDays = Convert.ToInt32(Console.ReadLine());
+            //    DateTime expiryDate = startDate.AddDays(membershipDays);
+            //    if (expiryDate >= DateTime.Today)
+            //    {
+            //        Console.WriteLine("Status: Active");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Status: Expired");
+            //    }
 
-                Console.WriteLine("Expiry Date: " + expiryDate.ToString("yyyy-MM-dd"));
-            }
+            //    Console.WriteLine("Expiry Date: " + expiryDate.ToString("yyyy-MM-dd"));
+            //}
 
-            catch (Exception)
-            {
-                Console.WriteLine("Invalid input. Please enter a valid date and number of days.");
-            }
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Invalid input. Please enter a valid date and number of days.");
+            //}
+            ///////////////////////////////////////////////////////////////////////////////
+
+            ///Task 9 - Round Up / Round Down Explorer
+            Console.WriteLine("Enter a decimal number:");
+            double decimalNumber = Convert.ToDouble(Console.ReadLine());
+            double neares = Math.Round(decimalNumber);
+            double roundUp = Math.Ceiling(decimalNumber); // round up to the nearest whole number
+            double roundDown = Math.Floor(decimalNumber); // round down to the nearest whole number
+            Console.WriteLine("Nearest whole number: " + neares);
+            Console.WriteLine("Rounded up: " + roundUp);
+            Console.WriteLine("Rounded down: " + roundDown);
 
 
         }
