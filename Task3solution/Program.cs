@@ -80,17 +80,44 @@
             ////////////////////////////////////////////////////////////
 
             ///Task 7 - Clean Name Comparator
-            Console.Write("Enter the name (first time): ");
-            string name1 = Console.ReadLine().Trim().ToUpper();
-            Console.Write("Enter the name (second time): ");
-            string name2 = Console.ReadLine().Trim().ToUpper();
-            if (name1 == name2)
+            //Console.Write("Enter the name (first time): ");
+            //string name1 = Console.ReadLine().Trim().ToUpper();
+            //Console.Write("Enter the name (second time): ");
+            //string name2 = Console.ReadLine().Trim().ToUpper();
+            //if (name1 == name2)
+            //{
+            //    Console.WriteLine("Match");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Match");
+            //}
+            ///////////////////////////////////////////////////////////////
+
+            ///Task 8 - Membership Expiry Checker
+            try
             {
-                Console.WriteLine("Match");
+                Console.Write("Enter membership start date: ");
+                string inputDate = Console.ReadLine();
+                DateTime startDate = DateTime.Parse(inputDate);
+                Console.Write("Enter number of valid membership days: ");
+                int membershipDays = Convert.ToInt32(Console.ReadLine());
+                DateTime expiryDate = startDate.AddDays(membershipDays);
+                if (expiryDate >= DateTime.Today)
+                {
+                    Console.WriteLine("Status: Active");
+                }
+                else
+                {
+                    Console.WriteLine("Status: Expired");
+                }
+
+                Console.WriteLine("Expiry Date: " + expiryDate.ToString("yyyy-MM-dd"));
             }
-            else
+
+            catch (Exception)
             {
-                Console.WriteLine("No Match");
+                Console.WriteLine("Invalid input. Please enter a valid date and number of days.");
             }
 
 
