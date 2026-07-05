@@ -122,14 +122,32 @@
             ///////////////////////////////////////////////////////////////////////////////
 
             ///Task 9 - Round Up / Round Down Explorer
-            Console.WriteLine("Enter a decimal number:");
-            double decimalNumber = Convert.ToDouble(Console.ReadLine());
-            double neares = Math.Round(decimalNumber);
-            double roundUp = Math.Ceiling(decimalNumber); // round up to the nearest whole number
-            double roundDown = Math.Floor(decimalNumber); // round down to the nearest whole number
-            Console.WriteLine("Nearest whole number: " + neares);
-            Console.WriteLine("Rounded up: " + roundUp);
-            Console.WriteLine("Rounded down: " + roundDown);
+            //Console.WriteLine("Enter a decimal number:");
+            //double decimalNumber = Convert.ToDouble(Console.ReadLine());
+            //double neares = Math.Round(decimalNumber);
+            //double roundUp = Math.Ceiling(decimalNumber); // round up to the nearest whole number
+            //double roundDown = Math.Floor(decimalNumber); // round down to the nearest whole number
+            //Console.WriteLine("Nearest whole number: " + neares);
+            //Console.WriteLine("Rounded up: " + roundUp);
+            //Console.WriteLine("Rounded down: " + roundDown);
+            //////////////////////////////////////////////////////////////////
+
+            ///Task 10 - Word Position Finder
+            Console.WriteLine("Enter a sentence:");
+            string sentence = Console.ReadLine();
+            Console.WriteLine("Enter a word:");
+            string word = Console.ReadLine();
+            int firstIndex = sentence.IndexOf(word);
+            int lastIndex = sentence.LastIndexOf(word);
+            if (firstIndex != -1) 
+            {
+                Console.WriteLine("First occurrence of the word is at index: " + firstIndex); 
+                Console.WriteLine("Last occurrence of the word is at index: " + lastIndex);
+            }
+            else
+            {
+                Console.WriteLine("The word was not found in the sentence.");
+            }
 
 
         }
