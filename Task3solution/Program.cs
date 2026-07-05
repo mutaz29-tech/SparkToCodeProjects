@@ -42,18 +42,40 @@
             ///////////////////////////////////////////////////////
 
             //Task 5 - Grade Rounding System
-            Console.Write("Enter your exam score: ");
-            double rawScore = double.Parse(Console.ReadLine());
-            double roundedScore = Math.Round(rawScore, 0);
-            if (roundedScore >= 60)
+            //Console.Write("Enter your exam score: ");
+            //double rawScore = double.Parse(Console.ReadLine());
+            //double roundedScore = Math.Round(rawScore, 0);
+            //if (roundedScore >= 60)
+            //{
+            //    Console.WriteLine($"Rounded Score: " + roundedScore);
+            //    Console.WriteLine("Result: Pass");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Rounded Score: " + roundedScore);
+            //    Console.WriteLine("Result: Fail");
+            //}
+            ///////////////////////////////////////
+
+            ///Task 6 - Password Strength Checker
+            Console.WriteLine("Enter your password:");
+            string password = Console.ReadLine();
+
+            if (password.Length >= 8 && !password.ToLower().Contains("password")) //at least 8 characters and does not contain the word "password"
             {
-                Console.WriteLine($"Rounded Score: " + roundedScore);
-                Console.WriteLine("Result: Pass");
+                Console.WriteLine("Your password is strong.");
             }
             else
             {
-                Console.WriteLine("Rounded Score: " + roundedScore);
-                Console.WriteLine("Result: Fail");
+                Console.WriteLine("Your password is weak.");
+            }
+            if (password.Length < 8)
+            {
+                Console.WriteLine("Password should be at least 8 characters long.");
+            }
+            if (password.ToLower().Contains("password"))
+            {
+                Console.WriteLine("Password should not contain the word 'password'.");
             }
 
         }
