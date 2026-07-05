@@ -133,21 +133,55 @@
             //////////////////////////////////////////////////////////////////
 
             ///Task 10 - Word Position Finder
-            Console.WriteLine("Enter a sentence:");
-            string sentence = Console.ReadLine();
-            Console.WriteLine("Enter a word:");
-            string word = Console.ReadLine();
-            int firstIndex = sentence.IndexOf(word);
-            int lastIndex = sentence.LastIndexOf(word);
-            if (firstIndex != -1) 
+            //Console.WriteLine("Enter a sentence:");
+            //string sentence = Console.ReadLine();
+            //Console.WriteLine("Enter a word:");
+            //string word = Console.ReadLine();
+            //int firstIndex = sentence.IndexOf(word);
+            //int lastIndex = sentence.LastIndexOf(word);
+            //if (firstIndex != -1) 
+            //{
+            //    Console.WriteLine("First occurrence of the word is at index: " + firstIndex); 
+            //    Console.WriteLine("Last occurrence of the word is at index: " + lastIndex);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The word was not found in the sentence.");
+            //}
+            ///////////////////////////////////////////////////////
+
+            ///Task 11 - One-Time Password (OTP) Generator
+            Random random = new Random();
+            int otp = random.Next(1000, 10000);
+
+            Console.WriteLine("Otp has been sent:" + otp); // this line sent me an otp number
+
+            int attempted = 0;
+
+            while (attempted < 3)
             {
-                Console.WriteLine("First occurrence of the word is at index: " + firstIndex); 
-                Console.WriteLine("Last occurrence of the word is at index: " + lastIndex);
+                try
+                {
+                    Console.WriteLine("Enter OTP");
+                    int userInput = Convert.ToInt32(Console.ReadLine()); // i have to enter the number that they sent me.
+
+                    if (userInput == otp)
+                    {
+                        Console.WriteLine("Verifide");
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorecct code.");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("invalid input");
+                }
+                attempted++;
             }
-            else
-            {
-                Console.WriteLine("The word was not found in the sentence.");
-            }
+            Console.WriteLine("verified failed");
 
 
         }
