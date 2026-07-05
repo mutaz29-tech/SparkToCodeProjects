@@ -58,25 +58,41 @@
             ///////////////////////////////////////
 
             ///Task 6 - Password Strength Checker
-            Console.WriteLine("Enter your password:");
-            string password = Console.ReadLine();
+            //Console.WriteLine("Enter your password:");
+            //string password = Console.ReadLine();
 
-            if (password.Length >= 8 && !password.ToLower().Contains("password")) //at least 8 characters and does not contain the word "password"
+            //if (password.Length >= 8 && !password.ToLower().Contains("password")) //at least 8 characters and does not contain the word "password"
+            //{
+            //    Console.WriteLine("Your password is strong.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Your password is weak.");
+            //}
+            //if (password.Length < 8)
+            //{
+            //    Console.WriteLine("Password should be at least 8 characters long.");
+            //}
+            //if (password.ToLower().Contains("password"))
+            //{
+            //    Console.WriteLine("Password should not contain the word 'password'.");
+            //}
+            ////////////////////////////////////////////////////////////
+
+            ///Task 7 - Clean Name Comparator
+            Console.Write("Enter the name (first time): ");
+            string name1 = Console.ReadLine().Trim().ToUpper();
+            Console.Write("Enter the name (second time): ");
+            string name2 = Console.ReadLine().Trim().ToUpper();
+            if (name1 == name2)
             {
-                Console.WriteLine("Your password is strong.");
+                Console.WriteLine("Match");
             }
             else
             {
-                Console.WriteLine("Your password is weak.");
+                Console.WriteLine("No Match");
             }
-            if (password.Length < 8)
-            {
-                Console.WriteLine("Password should be at least 8 characters long.");
-            }
-            if (password.ToLower().Contains("password"))
-            {
-                Console.WriteLine("Password should not contain the word 'password'.");
-            }
+
 
         }
     }
