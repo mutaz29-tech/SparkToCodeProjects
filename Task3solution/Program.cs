@@ -14,12 +14,26 @@
             ////////////////////////////////////////
 
             ///Task 2 - Power & Root Explore
-            Console.WriteLine("enter number");
-            int number = int.Parse(Console.ReadLine());
-            double pow = Math.Pow(number,2);
-            double sqrt = Math.Sqrt(number);
-            Console.WriteLine("power is " + pow);
-            Console.WriteLine("square root is " + sqrt);
+            //Console.WriteLine("enter number");
+            //int number = int.Parse(Console.ReadLine());
+            //double pow = Math.Pow(number,2);
+            //double sqrt = Math.Sqrt(number);
+            //Console.WriteLine("power is " + pow);
+            //Console.WriteLine("square root is " + sqrt);
+            ////////////////////////////////////////////////
+
+            ///Task 3 - Name Formatter
+            Console.WriteLine("enter your full name");
+            string name = Console.ReadLine();
+            int length= name.Length;
+            String lower=name.ToLower();
+            String upper = name.ToUpper();
+            Console.WriteLine("length is " + length);
+            Console.WriteLine("lower case is " + lower);
+            Console.WriteLine("upper case is " + upper);
+            /////////////////////////////////////////////////////
+
+
         }
     }
 }
