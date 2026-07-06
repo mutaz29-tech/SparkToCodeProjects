@@ -181,48 +181,157 @@
         ////////////////////////////////////////////////////////////////////////////
 
         ///Task 10 - Overloaded Area Calculator
-        static double CalculateArea(double side)
+        //static double CalculateArea(double side)
+        //{
+        //    return side * side;
+        //}
+        //static double CalculateArea(double length, double width)
+        //{
+        //    return length * width;
+        //}
+        //static void Main()
+        //{
+        //    Console.WriteLine("Choose a shape:");
+        //    Console.WriteLine("1. Square");
+        //    Console.WriteLine("2. Rectangle");
+
+        //    Console.Write("Enter your choice: ");
+        //    int choice = int.Parse(Console.ReadLine());
+
+        //    if (choice == 1)
+        //    {
+        //        Console.Write("Enter the side length: ");
+        //        double side = double.Parse(Console.ReadLine());
+
+        //        double area = CalculateArea(side);
+
+        //        Console.WriteLine("Area of the square: " + area);
+        //    }
+        //    else if (choice == 2)
+        //    {
+        //        Console.Write("Enter the length: ");
+        //        double length = double.Parse(Console.ReadLine());
+        //        Console.Write("Enter the width: ");
+        //        double width = double.Parse(Console.ReadLine());
+        //        double area = CalculateArea(length, width);
+        //        Console.WriteLine("Area of the rectangle: " + area);
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Invalid choice.");
+        //    }
+        //}
+        /////////////////////////////////////////////////////////////////////
+
+        //Task 11 - Function-Based Calculator
+        // Add
+        static double Add(double num1, double num2)
         {
-            return side * side;
+            return num1 + num2;
         }
-        static double CalculateArea(double length, double width)
+        // Sub
+        static double Subtract(double num1, double num2)
         {
-            return length * width;
+            return num1 - num2;
+        }
+        // Multipli
+        static double MultiplyNumbers(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+        // Division with try-catch
+        static double DivideNumbers(double num1, double num2)
+        {
+            try
+            {
+                if (num2 == 0)
+                {
+                    throw new DivideByZeroException();
+                }
+
+                return num1 / num2;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Error: Cannot divide by zero.");
+                return 0;
+            }
+        }
+        // Display result
+        static void DisplayResult(string operationName, double result)
+        {
+            Console.WriteLine($"\n{operationName} Result = {result}\n");
         }
         static void Main()
         {
-            Console.WriteLine("Choose a shape:");
-            Console.WriteLine("1. Square");
-            Console.WriteLine("2. Rectangle");
+            bool running = true;
 
-            Console.Write("Enter your choice: ");
-            int choice = int.Parse(Console.ReadLine());
-
-            if (choice == 1)
+            while (running)
             {
-                Console.Write("Enter the side length: ");
-                double side = double.Parse(Console.ReadLine());
+                Console.WriteLine("CALCULATOR MENU");
+                Console.WriteLine("1. Add");
+                Console.WriteLine("2. Subtract");
+                Console.WriteLine("3. Multiply");
+                Console.WriteLine("4. Divide");
+                Console.WriteLine("5. Exit");
+                Console.Write("Choose an option: ");
 
-                double area = CalculateArea(side);
+                int choice = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Area of the square: " + area);
-            }
-            else if (choice == 2)
-            {
-                Console.Write("Enter the length: ");
-                double length = double.Parse(Console.ReadLine());
-                Console.Write("Enter the width: ");
-                double width = double.Parse(Console.ReadLine());
-                double area = CalculateArea(length, width);
-                Console.WriteLine("Area of the rectangle: " + area);
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice.");
+                switch (choice)
+                {
+                    case 1:
+                        Console.Write("Enter first number: ");
+                        double addNum1 = double.Parse(Console.ReadLine());
+
+                        Console.Write("Enter second number: ");
+                        double addNum2 = double.Parse(Console.ReadLine());
+
+                        DisplayResult("Addition", Add(addNum1, addNum2));
+                        break;
+
+                    case 2:
+                        Console.Write("Enter first number: ");
+                        double subNum1 = double.Parse(Console.ReadLine());
+
+                        Console.Write("Enter second number: ");
+                        double subNum2 = double.Parse(Console.ReadLine());
+
+                        DisplayResult("Subtraction", Subtract(subNum1, subNum2));
+                        break;
+
+                    case 3:
+                        Console.Write("Enter first number: ");
+                        double mulNum1 = double.Parse(Console.ReadLine());
+
+                        Console.Write("Enter second number: ");
+                        double mulNum2 = double.Parse(Console.ReadLine());
+
+                        DisplayResult("Multiplication", MultiplyNumbers(mulNum1, mulNum2));
+                        break;
+
+                    case 4:
+                        Console.Write("Enter first number: ");
+                        double divNum1 = double.Parse(Console.ReadLine());
+
+                        Console.Write("Enter second number: ");
+                        double divNum2 = double.Parse(Console.ReadLine());
+
+                        DisplayResult("Division", DivideNumbers(divNum1, divNum2));
+                        break;
+
+                    case 5:
+                        running = false;
+                        Console.WriteLine("Exiting calculator...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.\n");
+                        break;
+                }
             }
         }
 
 
-
-    }
-}
+            }
+        }
