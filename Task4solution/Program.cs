@@ -224,114 +224,167 @@
         /////////////////////////////////////////////////////////////////////
 
         //Task 11 - Function-Based Calculator
-        // Add
-        static double Add(double num1, double num2)
-        {
-            return num1 + num2;
-        }
-        // Sub
-        static double Subtract(double num1, double num2)
-        {
-            return num1 - num2;
-        }
-        // Multipli
-        static double MultiplyNumbers(double num1, double num2)
-        {
-            return num1 * num2;
-        }
-        // Division with try-catch
-        static double DivideNumbers(double num1, double num2)
-        {
-            try
-            {
-                if (num2 == 0)
-                {
-                    throw new DivideByZeroException();
-                }
+        //// Add
+        //static double Add(double num1, double num2)
+        //{
+        //    return num1 + num2;
+        //}
+        //// Sub
+        //static double Subtract(double num1, double num2)
+        //{
+        //    return num1 - num2;
+        //}
+        //// Multipli
+        //static double MultiplyNumbers(double num1, double num2)
+        //{
+        //    return num1 * num2;
+        //}
+        //// Division with try-catch
+        //static double DivideNumbers(double num1, double num2)
+        //{
+        //    try
+        //    {
+        //        if (num2 == 0)
+        //        {
+        //            throw new DivideByZeroException();
+        //        }
 
-                return num1 / num2;
-            }
-            catch (DivideByZeroException)
+        //        return num1 / num2;
+        //    }
+        //    catch (DivideByZeroException)
+        //    {
+        //        Console.WriteLine("Error: Cannot divide by zero.");
+        //        return 0;
+        //    }
+        //}
+        //// Display result
+        //static void DisplayResult(string operationName, double result)
+        //{
+        //    Console.WriteLine($"\n{operationName} Result = {result}\n");
+        //}
+        //static void Main()
+        //{
+        //    bool running = true;
+
+        //    while (running)
+        //    {
+        //        Console.WriteLine("CALCULATOR MENU");
+        //        Console.WriteLine("1. Add");
+        //        Console.WriteLine("2. Subtract");
+        //        Console.WriteLine("3. Multiply");
+        //        Console.WriteLine("4. Divide");
+        //        Console.WriteLine("5. Exit");
+        //        Console.Write("Choose an option: ");
+
+        //        int choice = int.Parse(Console.ReadLine());
+
+        //        switch (choice)
+        //        {
+        //            case 1:
+        //                Console.Write("Enter first number: ");
+        //                double addNum1 = double.Parse(Console.ReadLine());
+
+        //                Console.Write("Enter second number: ");
+        //                double addNum2 = double.Parse(Console.ReadLine());
+
+        //                DisplayResult("Addition", Add(addNum1, addNum2));
+        //                break;
+
+        //            case 2:
+        //                Console.Write("Enter first number: ");
+        //                double subNum1 = double.Parse(Console.ReadLine());
+
+        //                Console.Write("Enter second number: ");
+        //                double subNum2 = double.Parse(Console.ReadLine());
+
+        //                DisplayResult("Subtraction", Subtract(subNum1, subNum2));
+        //                break;
+
+        //            case 3:
+        //                Console.Write("Enter first number: ");
+        //                double mulNum1 = double.Parse(Console.ReadLine());
+
+        //                Console.Write("Enter second number: ");
+        //                double mulNum2 = double.Parse(Console.ReadLine());
+
+        //                DisplayResult("Multiplication", MultiplyNumbers(mulNum1, mulNum2));
+        //                break;
+
+        //            case 4:
+        //                Console.Write("Enter first number: ");
+        //                double divNum1 = double.Parse(Console.ReadLine());
+
+        //                Console.Write("Enter second number: ");
+        //                double divNum2 = double.Parse(Console.ReadLine());
+
+        //                DisplayResult("Division", DivideNumbers(divNum1, divNum2));
+        //                break;
+
+        //            case 5:
+        //                running = false;
+        //                Console.WriteLine("Exiting calculator...");
+        //                break;
+
+        //            default:
+        //                Console.WriteLine("Invalid option. Please try again.\n");
+        //                break;
+        //        }
+        //    }
+        //}
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        ///Task 12 - Student Report Card Generator
+        static double CalculateAverage(double score1, double score2, double score3)
+        {
+            return (score1 + score2 + score3) / 3;
+        }
+        static string GradeLetter(double average)
+        {
+            if (average >= 90)
             {
-                Console.WriteLine("Error: Cannot divide by zero.");
-                return 0;
+                return "A";
+            }
+            else if (average >= 80)
+            {
+                return "B";
+            }
+            else if (average >= 70)
+            {
+                return "C";
+            }
+            else if (average >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
             }
         }
-        // Display result
-        static void DisplayResult(string operationName, double result)
+        // Prints the report card
+        static void PrintReportCard(string studentName, double average, string gradeLetter)
         {
-            Console.WriteLine($"\n{operationName} Result = {result}\n");
+            Console.WriteLine("REPORT CARD");
+            Console.WriteLine("Student Name: " + studentName);
+            Console.WriteLine("Average Score: " + average.ToString("F2"));
+            Console.WriteLine("Grade Letter: " + gradeLetter);
         }
         static void Main()
         {
-            bool running = true;
-
-            while (running)
-            {
-                Console.WriteLine("CALCULATOR MENU");
-                Console.WriteLine("1. Add");
-                Console.WriteLine("2. Subtract");
-                Console.WriteLine("3. Multiply");
-                Console.WriteLine("4. Divide");
-                Console.WriteLine("5. Exit");
-                Console.Write("Choose an option: ");
-
-                int choice = int.Parse(Console.ReadLine());
-
-                switch (choice)
-                {
-                    case 1:
-                        Console.Write("Enter first number: ");
-                        double addNum1 = double.Parse(Console.ReadLine());
-
-                        Console.Write("Enter second number: ");
-                        double addNum2 = double.Parse(Console.ReadLine());
-
-                        DisplayResult("Addition", Add(addNum1, addNum2));
-                        break;
-
-                    case 2:
-                        Console.Write("Enter first number: ");
-                        double subNum1 = double.Parse(Console.ReadLine());
-
-                        Console.Write("Enter second number: ");
-                        double subNum2 = double.Parse(Console.ReadLine());
-
-                        DisplayResult("Subtraction", Subtract(subNum1, subNum2));
-                        break;
-
-                    case 3:
-                        Console.Write("Enter first number: ");
-                        double mulNum1 = double.Parse(Console.ReadLine());
-
-                        Console.Write("Enter second number: ");
-                        double mulNum2 = double.Parse(Console.ReadLine());
-
-                        DisplayResult("Multiplication", MultiplyNumbers(mulNum1, mulNum2));
-                        break;
-
-                    case 4:
-                        Console.Write("Enter first number: ");
-                        double divNum1 = double.Parse(Console.ReadLine());
-
-                        Console.Write("Enter second number: ");
-                        double divNum2 = double.Parse(Console.ReadLine());
-
-                        DisplayResult("Division", DivideNumbers(divNum1, divNum2));
-                        break;
-
-                    case 5:
-                        running = false;
-                        Console.WriteLine("Exiting calculator...");
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid option. Please try again.\n");
-                        break;
-                }
-            }
+            Console.Write("Enter student name: ");
+            string studentName = Console.ReadLine();
+            Console.Write("Enter score for Subject 1: ");
+            double score1 = double.Parse(Console.ReadLine());
+            Console.Write("Enter score for Subject 2: ");
+            double score2 = double.Parse(Console.ReadLine());
+            Console.Write("Enter score for Subject 3: ");
+            double score3 = double.Parse(Console.ReadLine());
+            double average = CalculateAverage(score1, score2, score3);
+            string gradeLetter = GradeLetter(average);
+            PrintReportCard(studentName, average, gradeLetter);
         }
 
 
-            }
-        }
+
+    }
+}
