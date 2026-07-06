@@ -33,18 +33,32 @@
         /////////////////////////////////////////////////////////
 
         ///Task 3 - Celsius to Fahrenheit Function
-        static double CelsiusToFahrenheit(double celsius)
+        //static double CelsiusToFahrenheit(double celsius)
+        //{
+        //    return (celsius * 9 / 5) + 32;
+        //}
+        //static void Main()
+        //{
+        //    Console.Write("Enter temperature in Celsius: ");
+        //    double celsius = double.Parse(Console.ReadLine());
+
+        //    double fahrenheit = CelsiusToFahrenheit(celsius);
+
+        //    Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
+        //}
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        ///Task 4 - Fixed Menu Display Function
+        static void DisplayMenu()
         {
-            return (celsius * 9 / 5) + 32;
+            Console.WriteLine(" MENU ");
+            Console.WriteLine("1) Start");
+            Console.WriteLine("2) Help");
+            Console.WriteLine("3) Exit");
         }
         static void Main()
         {
-            Console.Write("Enter temperature in Celsius: ");
-            double celsius = double.Parse(Console.ReadLine());
-
-            double fahrenheit = CelsiusToFahrenheit(celsius);
-
-            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
+            DisplayMenu();
         }
 
 
