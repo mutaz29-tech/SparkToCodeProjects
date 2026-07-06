@@ -83,26 +83,62 @@
         ////////////////////////////////////////////////////
 
         ///Task 6 - Rectangle Area & Perimeter Functions
-        static double CalculateArea(double length, double width)
+        //static double CalculateArea(double length, double width)
+        //{
+        //    return length * width;
+        //}
+        //static double CalculatePerimeter(double length, double width)
+        //{
+        //    return 2 * (length + width);
+        //}
+        //static void Main()
+        //{
+        //    Console.Write("Enter the length: ");
+        //    double length = double.Parse(Console.ReadLine());
+        //    Console.Write("Enter the width: ");
+        //    double width = double.Parse(Console.ReadLine());
+        //    double area = CalculateArea(length, width);
+        //    double perimeter = CalculatePerimeter(length, width);
+        //    Console.WriteLine("Area = " + area);
+        //    Console.WriteLine("Perimeter = " + perimeter);
+        //}
+        //////////////////////////////////////////////////////////////////
+
+
+        ///Task 7 - Grade Letter Function
+
+        static string GradeLetter(int score)
         {
-            return length * width;
-        }
-        static double CalculatePerimeter(double length, double width)
-        {
-            return 2 * (length + width);
+            if (score >= 90)
+            {
+                return "A";
+            }
+            else if (score >= 80)
+            {
+                return "B";
+            }
+            else if (score >= 70)
+            {
+                return "C";
+            }
+            else if (score >= 60)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
         }
         static void Main()
         {
-            Console.Write("Enter the length: ");
-            double length = double.Parse(Console.ReadLine());
-            Console.Write("Enter the width: ");
-            double width = double.Parse(Console.ReadLine());
-            double area = CalculateArea(length, width);
-            double perimeter = CalculatePerimeter(length, width);
-            Console.WriteLine("Area = " + area);
-            Console.WriteLine("Perimeter = " + perimeter);
-        }
+            Console.Write("Enter your score: ");
+            int score = int.Parse(Console.ReadLine());
 
+            string grade = GradeLetter(score);
+
+            Console.WriteLine("Grade Letter: " + grade);
+        }
 
     }
 }
