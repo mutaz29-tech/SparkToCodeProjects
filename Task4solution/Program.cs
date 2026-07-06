@@ -49,16 +49,36 @@
         /////////////////////////////////////////////////////////////////////////////////////
 
         ///Task 4 - Fixed Menu Display Function
-        static void DisplayMenu()
+        //static void DisplayMenu()
+        //{
+        //    Console.WriteLine(" MENU ");
+        //    Console.WriteLine("1) Start");
+        //    Console.WriteLine("2) Help");
+        //    Console.WriteLine("3) Exit");
+        //}
+        //static void Main()
+        //{
+        //    DisplayMenu();
+        //}
+        //////////////////////////////////////////////////////////////
+
+        ///Task 5 - Even or Odd Function
+        static bool IsEven(int number)
         {
-            Console.WriteLine(" MENU ");
-            Console.WriteLine("1) Start");
-            Console.WriteLine("2) Help");
-            Console.WriteLine("3) Exit");
+            return number % 2 == 0;
         }
         static void Main()
         {
-            DisplayMenu();
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+            if (IsEven(number))
+            {
+                Console.WriteLine("Even");
+            }
+            else
+            {
+                Console.WriteLine("Odd");
+            }
         }
 
 
