@@ -19,16 +19,32 @@
         ////////////////////////////////////////////
 
         ///Task 2 - Square Number Function
-        static int Square(int number)
+        //static int Square(int number)
+        //{
+        //    return number * number;
+        //}
+        //static void Main()
+        //{
+        //    Console.Write("Enter a number: ");
+        //    int number = int.Parse(Console.ReadLine());
+        //    int result = Square(number);
+        //    Console.WriteLine("The square is: " + result);
+        //}
+        /////////////////////////////////////////////////////////
+
+        ///Task 3 - Celsius to Fahrenheit Function
+        static double CelsiusToFahrenheit(double celsius)
         {
-            return number * number;
+            return (celsius * 9 / 5) + 32;
         }
         static void Main()
         {
-            Console.Write("Enter a number: ");
-            int number = int.Parse(Console.ReadLine());
-            int result = Square(number);
-            Console.WriteLine("The square is: " + result);
+            Console.Write("Enter temperature in Celsius: ");
+            double celsius = double.Parse(Console.ReadLine());
+
+            double fahrenheit = CelsiusToFahrenheit(celsius);
+
+            Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);
         }
 
 
