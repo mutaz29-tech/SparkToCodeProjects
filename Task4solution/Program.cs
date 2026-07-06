@@ -157,27 +157,71 @@
         ////////////////////////////////////////////////////////////////
 
         ///Task 9 - Overloaded Multiply Function
-        static int Multiply(int a, int b)
+        //static int Multiply(int a, int b)
+        //{
+        //    return a * b;
+        //}
+        //static double Multiply(double a, double b)
+        //{
+        //    return a * b;
+        //}
+        //static int Multiply(int a, int b, int c)
+        //{
+        //    return a * b * c;
+        //}
+        //static void Main()
+        //{
+        //    int result1 = Multiply(4, 5);
+        //    double result2 = Multiply(2.5, 3.2);
+        //    int result3 = Multiply(2, 3, 4);
+        //    Console.WriteLine("Multiply(int, int): " + result1);
+        //    Console.WriteLine("Multiply(double, double): " + result2);
+        //    Console.WriteLine("Multiply(int, int, int): " + result3);
+        //}
+        ////////////////////////////////////////////////////////////////////////////
+
+        ///Task 10 - Overloaded Area Calculator
+        static double CalculateArea(double side)
         {
-            return a * b;
+            return side * side;
         }
-        static double Multiply(double a, double b)
+        static double CalculateArea(double length, double width)
         {
-            return a * b;
-        }
-        static int Multiply(int a, int b, int c)
-        {
-            return a * b * c;
+            return length * width;
         }
         static void Main()
         {
-            int result1 = Multiply(4, 5);
-            double result2 = Multiply(2.5, 3.2);
-            int result3 = Multiply(2, 3, 4);
-            Console.WriteLine("Multiply(int, int): " + result1);
-            Console.WriteLine("Multiply(double, double): " + result2);
-            Console.WriteLine("Multiply(int, int, int): " + result3);
+            Console.WriteLine("Choose a shape:");
+            Console.WriteLine("1. Square");
+            Console.WriteLine("2. Rectangle");
+
+            Console.Write("Enter your choice: ");
+            int choice = int.Parse(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Console.Write("Enter the side length: ");
+                double side = double.Parse(Console.ReadLine());
+
+                double area = CalculateArea(side);
+
+                Console.WriteLine("Area of the square: " + area);
+            }
+            else if (choice == 2)
+            {
+                Console.Write("Enter the length: ");
+                double length = double.Parse(Console.ReadLine());
+                Console.Write("Enter the width: ");
+                double width = double.Parse(Console.ReadLine());
+                double area = CalculateArea(length, width);
+                Console.WriteLine("Area of the rectangle: " + area);
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
+            }
         }
+
 
 
     }
