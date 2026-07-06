@@ -106,39 +106,56 @@
 
 
         ///Task 7 - Grade Letter Function
+        //static string GradeLetter(int score)
+        //{
+        //    if (score >= 90)
+        //    {
+        //        return "A";
+        //    }
+        //    else if (score >= 80)
+        //    {
+        //        return "B";
+        //    }
+        //    else if (score >= 70)
+        //    {
+        //        return "C";
+        //    }
+        //    else if (score >= 60)
+        //    {
+        //        return "D";
+        //    }
+        //    else
+        //    {
+        //        return "F";
+        //    }
+        //}
+        //static void Main()
+        //{
+        //    Console.Write("Enter your score: ");
+        //    int score = int.Parse(Console.ReadLine());
 
-        static string GradeLetter(int score)
+        //    string grade = GradeLetter(score);
+
+        //    Console.WriteLine("Grade Letter: " + grade);
+        //}
+        //////////////////////////////////////////////////////////////////
+
+        ///Task 8 - Countdown Function
+
+        static void Count(int startNumber)
         {
-            if (score >= 90)
+            for (int i = startNumber; i >= 1; i--)
             {
-                return "A";
-            }
-            else if (score >= 80)
-            {
-                return "B";
-            }
-            else if (score >= 70)
-            {
-                return "C";
-            }
-            else if (score >= 60)
-            {
-                return "D";
-            }
-            else
-            {
-                return "F";
+                Console.WriteLine(i);
             }
         }
         static void Main()
         {
-            Console.Write("Enter your score: ");
-            int score = int.Parse(Console.ReadLine());
-
-            string grade = GradeLetter(score);
-
-            Console.WriteLine("Grade Letter: " + grade);
+            Console.Write("Enter a starting number: ");
+            int startNumber = int.Parse(Console.ReadLine());
+            Count(startNumber);
         }
+
 
     }
 }
