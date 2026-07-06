@@ -141,19 +141,42 @@
         //////////////////////////////////////////////////////////////////
 
         ///Task 8 - Countdown Function
+        //static void Count(int startNumber)
+        //{
+        //    for (int i = startNumber; i >= 1; i--)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //}
+        //static void Main()
+        //{
+        //    Console.Write("Enter a starting number: ");
+        //    int startNumber = int.Parse(Console.ReadLine());
+        //    Count(startNumber);
+        //}
+        ////////////////////////////////////////////////////////////////
 
-        static void Count(int startNumber)
+        ///Task 9 - Overloaded Multiply Function
+        static int Multiply(int a, int b)
         {
-            for (int i = startNumber; i >= 1; i--)
-            {
-                Console.WriteLine(i);
-            }
+            return a * b;
+        }
+        static double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+        static int Multiply(int a, int b, int c)
+        {
+            return a * b * c;
         }
         static void Main()
         {
-            Console.Write("Enter a starting number: ");
-            int startNumber = int.Parse(Console.ReadLine());
-            Count(startNumber);
+            int result1 = Multiply(4, 5);
+            double result2 = Multiply(2.5, 3.2);
+            int result3 = Multiply(2, 3, 4);
+            Console.WriteLine("Multiply(int, int): " + result1);
+            Console.WriteLine("Multiply(double, double): " + result2);
+            Console.WriteLine("Multiply(int, int, int): " + result3);
         }
 
 
