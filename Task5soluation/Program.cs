@@ -124,21 +124,53 @@
             ////////////////////////////////////////////////////////
 
             ///Task 7 - High Score Podium
-            List<int> scores = new List<int>();
-            // Ask the user to enter 5 scores
-            for (int i = 0; i < 5; i++)
+            //List<int> scores = new List<int>();
+            //// Ask the user to enter 5 scores
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.Write($"Enter score #{i + 1}: ");
+            //    scores.Add(int.Parse(Console.ReadLine()));
+            //}
+            //// Sort in ascending order, then reverse to descending order
+            //scores.Sort();
+            //scores.Reverse();
+            //// Print the top 3 scores as a podium
+            //Console.WriteLine(" Top 3 Scores ");
+            //Console.WriteLine($"1st place: {scores[0]}");
+            //Console.WriteLine($"2nd place: {scores[1]}");
+            //Console.WriteLine($"3rd place: {scores[2]}");
+            //////////////////////////////////////////////////////////
+
+            ///Task 8 - Undo Last Action
+            Stack<string> actions = new Stack<string>();
+            string action = "";
+            while (action.ToLower() != "stop")
             {
-                Console.Write($"Enter score #{i + 1}: ");
-                scores.Add(int.Parse(Console.ReadLine()));
+                Console.Write("Enter an action (or type 'stop' to finish): ");
+                action = Console.ReadLine();
+
+                if (action.ToLower() != "stop")
+                {
+                    actions.Push(action);
+                }
             }
-            // Sort in ascending order, then reverse to descending order
-            scores.Sort();
-            scores.Reverse();
-            // Print the top 3 scores as a podium
-            Console.WriteLine(" Top 3 Scores ");
-            Console.WriteLine($"1st place: {scores[0]}");
-            Console.WriteLine($"2nd place: {scores[1]}");
-            Console.WriteLine($"3rd place: {scores[2]}");
+            // Simulate Undo twice
+            Console.WriteLine("\nUndoing the last two actions:");
+            if (actions.Count > 0)
+            {
+                Console.WriteLine("Undone: " + actions.Pop());
+            }
+
+            if (actions.Count > 0)
+            {
+                Console.WriteLine("Undone: " + actions.Pop());
+            }
+            // Print remaining actions
+            Console.WriteLine("\nActions remaining in the stack:");
+            foreach (string remainingAction in actions)
+            {
+                Console.WriteLine("- " + remainingAction);
+            }
 
 
         }
