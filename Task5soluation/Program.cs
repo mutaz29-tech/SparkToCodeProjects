@@ -142,37 +142,77 @@
             //////////////////////////////////////////////////////////
 
             ///Task 8 - Undo Last Action
-            Stack<string> actions = new Stack<string>();
-            string action = "";
-            while (action.ToLower() != "stop")
-            {
-                Console.Write("Enter an action (or type 'stop' to finish): ");
-                action = Console.ReadLine();
+            //Stack<string> actions = new Stack<string>();
+            //string action = "";
+            //while (action.ToLower() != "stop")
+            //{
+            //    Console.Write("Enter an action (or type 'stop' to finish): ");
+            //    action = Console.ReadLine();
 
-                if (action.ToLower() != "stop")
-                {
-                    actions.Push(action);
-                }
-            }
-            // Simulate Undo twice
-            Console.WriteLine("\nUndoing the last two actions:");
-            if (actions.Count > 0)
-            {
-                Console.WriteLine("Undone: " + actions.Pop());
-            }
+            //    if (action.ToLower() != "stop")
+            //    {
+            //        actions.Push(action);
+            //    }
+            //}
+            //// Simulate Undo twice
+            //Console.WriteLine("\nUndoing the last two actions:");
+            //if (actions.Count > 0)
+            //{
+            //    Console.WriteLine("Undone: " + actions.Pop());
+            //}
 
-            if (actions.Count > 0)
-            {
-                Console.WriteLine("Undone: " + actions.Pop());
-            }
-            // Print remaining actions
-            Console.WriteLine("\nActions remaining in the stack:");
-            foreach (string remainingAction in actions)
-            {
-                Console.WriteLine("- " + remainingAction);
-            }
+            //if (actions.Count > 0)
+            //{
+            //    Console.WriteLine("Undone: " + actions.Pop());
+            //}
+            //// Print remaining actions
+            //Console.WriteLine("\nActions remaining in the stack:");
+            //foreach (string remainingAction in actions)
+            //{
+            //    Console.WriteLine("- " + remainingAction);
+            //}
+            ///////////////////////////////////////////////////////////
 
+            /////Task 9 - Grade Analyzer with Functions
+            List<int> grades = new List<int>();
+            Console.Write("How many grades do you want to enter? ");
+            int count = int.Parse(Console.ReadLine());
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write($"Enter grade #{i + 1}: ");
+                grades.Add(int.Parse(Console.ReadLine()));
+            }
+            double average = CalculateAverage(grades);
+            int firstFailing = FindFirstFailing(grades);
+            Console.WriteLine($"\nAverage Grade: {average:F2}");
 
+            if (firstFailing == 0)
+            {
+                Console.WriteLine("No failing grade was found.");
+
+            }
+            else
+            {
+                Console.WriteLine($"First Failing Grade: {firstFailing}");
+            }
         }
-    }
+        static double CalculateAverage(List<int> grades)
+        {
+            int sum = 0;
+
+            foreach (int grade in grades)
+            {
+                sum += grade;
+            }
+
+            return (double)sum / grades.Count;
+        }
+        static int FindFirstFailing(List<int> grades)
+        {
+            return grades.Find(x => x < 60);
+        }
+
+    
+    
+}
 }
