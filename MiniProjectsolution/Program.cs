@@ -307,6 +307,24 @@
                 Console.WriteLine("Balance:" + balances[i]);
             }
         }
+        
+        // custometr service 2:close account
+        static void CloseAccount()
+        {
+            Console.Write("Enter Account Number to Close: ");
+            string accountNo = Console.ReadLine();
+            int index = accountNumbers.IndexOf(accountNo);
+            if (index == -1)
+            {
+                Console.WriteLine("Account not found.");
+                return;
+            }
+            // Remove data from ALL three lists
+            customerNames.RemoveAt(index);
+            accountNumbers.RemoveAt(index);
+            balances.RemoveAt(index);
+            Console.WriteLine("Account Closed Successfully!");
+        }
 
 
 
