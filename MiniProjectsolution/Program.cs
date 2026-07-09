@@ -182,19 +182,13 @@
         }
         
         //Service 3 - Withdraw Money
-
         static void WithdrawMoney()
-
         {
             Console.Write("...WithdrawMoney...: ");
-
             Console.Write("Enter account number: ");
             string accountNumber = Console.ReadLine();
-
-            int index = accountNumbers.IndexOf(accountNumber);
-
-
-            if (index == -1)
+            int indx = accountNumbers.IndexOf(accountNumber);
+            if (indx == -1)
             {
                 Console.WriteLine("Account not found.");
                 return;
@@ -213,7 +207,7 @@
                     Console.WriteLine("Amount must be positive.");
                     return;
                 }
-                if (amount > balances[index])
+                if (amount > balances[indx])
                 {
                     Console.WriteLine("Balance too low");
                     return;
@@ -224,14 +218,37 @@
                 Console.WriteLine("invalid amount");
                 return;
             }
-            balances[index] -= amount;
+            balances[indx] -= amount;
 
 
             Console.WriteLine("Withdrawal successful.");
+            Console.WriteLine("Balance: " + balances[indx]);
+        }
+        //Service 4 - Show Balance
+        static void ShowBalance()
+        {
+            Console.Write("...ShowBalance...: ");
+            Console.Write("Enter account number: ");
+            string accountNumber = Console.ReadLine();
+
+
+            int index = accountNumbers.IndexOf(accountNumber);
+
+
+            if (index == -1)
+            {
+                Console.WriteLine("Account not found.");
+                return;
+            }
+
+
+            Console.WriteLine("\nCustomer: " + customerNames[index]);
+            Console.WriteLine("Account Number: " + accountNumbers[index]);
             Console.WriteLine("Balance: " + balances[index]);
         }
 
-
-
     }
+
+
+}
 }
