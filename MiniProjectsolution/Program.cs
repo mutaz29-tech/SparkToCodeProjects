@@ -81,7 +81,58 @@
             }
         }
 
-       
+
+  
+        ///Service 1 - Add New Account
+        
+        static void AddAccount()
+        {
+            Console.WriteLine("Add new account:");
+            Console.WriteLine("Enter cusomer name:");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("Enter cusomer account number:");
+            string accountNumber = Console.ReadLine();
+
+            if (accountNumbers.Contains(accountNumber)) // to check it their is dublicate account number
+            {
+                Console.WriteLine("Account already exists.");
+                return;
+            }
+
+
+            double deposit;
+
+            try
+            {
+                Console.Write("Enter initial deposit: ");
+                deposit = double.Parse(Console.ReadLine());
+
+
+                // Check if deposit is negative
+
+                if (deposit < 0)
+                {
+                    Console.WriteLine("Deposit cant be negative.");
+                    return;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+
+            // Add data to all lists
+
+            customerNames.Add(name);
+            accountNumbers.Add(accountNumber);
+            balances.Add(deposit);
+
+
+            Console.WriteLine("Account created successfully.");
+        }
 
 
 
