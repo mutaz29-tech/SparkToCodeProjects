@@ -230,25 +230,85 @@
             Console.Write("...ShowBalance...: ");
             Console.Write("Enter account number: ");
             string accountNumber = Console.ReadLine();
-
-
-            int index = accountNumbers.IndexOf(accountNumber);
-
-
-            if (index == -1)
+            int indx = accountNumbers.IndexOf(accountNumber);
+            if (indx == -1)
             {
                 Console.WriteLine("Account not found.");
                 return;
             }
+            Console.WriteLine("\nCustomer: " + customerNames[indx]);
+            Console.WriteLine("Account Number: " + accountNumbers[indx]);
+            Console.WriteLine("Balance: " + balances[indx]);
+        }
+       
+        /// Service 5 - Transfer Amount
+        static void TransferAmount()
+        {
+            Console.WriteLine("///Transfer Amount..."); 
+            Console.WriteLine("send account number");
+            string send = Console.ReadLine();
+            Console.WriteLine("Receiv account number");
+            string Receive = Console.ReadLine();
+            int sendIndex = accountNumbers.IndexOf(send);
+            int ReceiveIndex = accountNumbers.IndexOf(Receive);
+            if (sendIndex == -1 || ReceiveIndex == -1)
+            {
+                Console.WriteLine("Account dose not exist");
+                return;
+            }
+            if (sendIndex == ReceiveIndex)
+            {
+                Console.WriteLine("cant transfear to same account");
+                return;
+            }
+            double amount;
 
+            try
+            {
+                Console.WriteLine("Enter transfer amount: ");
+                amount = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("\nCustomer: " + customerNames[index]);
-            Console.WriteLine("Account Number: " + accountNumbers[index]);
-            Console.WriteLine("Balance: " + balances[index]);
+                if (amount <= 0)
+                {
+                    Console.WriteLine("Amount must be positive.");
+                    return;
+                }
+                if (amount > balances[sendIndex])
+                {
+                    Console.WriteLine("balnace is not enough");
+                    return;
+                }
+            }
+            catch
+            {
+                Console.WriteLine("invalid amount");
+                return;
+            }
+
+            balances[sendIndex] -= amount;
+            balances[ReceiveIndex] += amount;
+            Console.WriteLine("Transfer successful.");
+        }
+        // CUSTOM SERVICE 1: LIST ALL ACCOUNTS
+
+        static void ListAllAccounts()
+        {
+            Console.WriteLine("...ListAllAccounts...");
+
+            if (accountNumbers.Count == 0)
+            {
+                Console.WriteLine("their is no accounts avalibe");
+                return;
+            }
+            for (int i = 0; i < accountNumbers.Count; i++)
+            {
+                Console.WriteLine("name:" + customerNames[i]);
+                Console.WriteLine("account:" + accountNumbers[i]);
+                Console.WriteLine("Balance:" + balances[i]);
+            }
         }
 
+
+
     }
-
-
-}
 }
