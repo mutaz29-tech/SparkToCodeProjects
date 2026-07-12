@@ -263,6 +263,22 @@ namespace OPPTask1solution
             Console.WriteLine("Address updated successfully.");
             Console.WriteLine("New Address: " + student.Addres);
         }
+        ////////////////////////////////////////////////////////////////////
+
+        ///Case 3 - Make a Deposit
+        static void MakeDeposit(BankAccount account1,BankAccount account2)
+        {
+            BankAccount account = ChooseAccount(account1, account2);
+
+            Console.Write("Enter amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            account.Desposit(amount);
+
+            Console.WriteLine("Holder Name: " + account.HolderName);
+            Console.WriteLine("Balance: " + account.Balance);
+        }
+
 
     }
 }
