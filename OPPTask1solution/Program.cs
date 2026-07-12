@@ -114,39 +114,19 @@ namespace OPPTask1solution
     }
     public class Program
     {
-        
 
+
+        // Bank Accounts
+        BankAccount account1 = new BankAccount { AccountNumber = 1163, HolderName = "Karim", Balance = 120 };
+        BankAccount account2 = new BankAccount { AccountNumber = 3333, HolderName = "Ali", Balance = 150 };
+        // Students
+        Student student1 = new Student { Name = "Ahmed", Grade = 10, Addres = "Cairo" };
+        Student student2 = new Student { Name = "Sara", Grade = 12, Addres = "Alex" };
+        //Product
+        Product product1 = new Product { ProductName = "Laptop", Price = 1000, StockQuantity = 10 };
+        Product product2 = new Product { ProductName = "Phone", Price = 500, StockQuantity = 20 };
         static void Main(string[] args)
         {
-            // Bank Accounts
-            BankAccount account1 = new BankAccount { AccountNumber = 1163, HolderName = "Karim", Balance = 120 };
-            BankAccount account2 = new BankAccount { AccountNumber = 3333, HolderName = "Ali", Balance = 150 };
-            // Students
-            Student student1 = new Student { Name = "Ahmed", Grade = 10, Addres = "Cairo" };
-            Student student2 = new Student { Name = "Sara", Grade = 12, Addres = "Alex" };
-            //Product
-            Product product1 = new Product { ProductName = "Laptop", Price = 1000, StockQuantity = 10 };
-            Product product2 = new Product { ProductName = "Phone", Price = 500, StockQuantity = 20 };
-            //Case 1 - View Account Details
-            static void ViewAccountDetails(BankAccount account1, BankAccount account2)
-            {
-                Console.WriteLine("choose account to view details (1 or 2):");
-                int input =int.Parse(Console.ReadLine());
-                if (input == 1) 
-                {
-                    account1.CheckBalance();
-                }
-                else if (input == 2)
-                {
-                    account2.CheckBalance();
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input.");
-                }
-                
-
-            }
             bool exitApp = false;
 
             //    while (exitApp == false)
@@ -215,5 +195,74 @@ namespace OPPTask1solution
             //                break;
             //        
         }
+
+        /// helpers 
+         
+        static BankAccount ChooseAccount(BankAccount account1 , BankAccount account2)
+        {
+            Console.WriteLine("choose account details (1 or 2):");
+            int input = int.Parse(Console.ReadLine());
+            if (input == 2)
+            {
+                return account2;
+            }
+            return account1;
+        }
+        // stident 
+        static Student ChooseStudent(Student student1,Student student2)
+        {
+            Console.WriteLine("choose student details (1 or 2):");
+            int input = int.Parse(Console.ReadLine());
+            if (input == 2)
+            {
+                return student2;
+            }
+            return student1;
+        }
+        //product
+        static Product ChooseProduct(Product product1, Product product2)
+        {
+            Console.WriteLine("choose product details (1 or 2):");
+            int input = int.Parse(Console.ReadLine());
+            if (input == 2)
+            {
+                return product2;
+            }
+            return product1;
+        }
+
+        //Case 1 - View Account Details
+        static void ViewAccountDetails(BankAccount account1, BankAccount account2)
+            {
+                Console.WriteLine("choose account to view details (1 or 2):");
+                int input =int.Parse(Console.ReadLine());
+                if (input == 1) 
+                {
+                    account1.CheckBalance();
+                }
+                else if (input == 2)
+                {
+                    account2.CheckBalance();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input.");
+                }
+            }
+        //////////////////////////////////////////////////////////////
+        ///Case 2 - Update Student Address
+        static void UpdateStudentAddress(Student student1,Student student2)
+        {
+            Student student = ChooseStudent(student1, student2);
+
+            Console.Write("Enter new address: ");
+            string newAddress = Console.ReadLine();
+
+            student.Addres = newAddress;
+
+            Console.WriteLine("Address updated successfully.");
+            Console.WriteLine("New Address: " + student.Addres);
+        }
+
     }
 }
