@@ -278,6 +278,21 @@ namespace OPPTask1solution
             Console.WriteLine("Holder Name: " + account.HolderName);
             Console.WriteLine("Balance: " + account.Balance);
         }
+        //////////////////////////////////////////////////////
+
+        ///Case 4 - Make a Withdrawal
+        static void MakeWithdrawal(BankAccount account1, BankAccount account2)
+        {
+            BankAccount account = ChooseAccount(account1, account2);
+
+            Console.Write("Enter amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            account.Withdraw(amount);
+
+            Console.WriteLine("Updated Balance: " + account.Balance);
+        }
+
 
 
     }
