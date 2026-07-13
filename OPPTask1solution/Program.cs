@@ -469,6 +469,39 @@ namespace OPPTask1solution
                     Console.WriteLine($"Total Revenue: {revenue}");
                     Console.WriteLine($"Remaining Stock: {product.StockQuantity}");
                 }
+                ///////////////////////////////////////////////////////////////////////////////////
+
+                ///Case 14 - Scholarship Eligibility Check
+                static void ScholarshipEligibilityCheck(
+    Student student1, Student student2,
+    BankAccount account1, BankAccount account2)
+                {
+                    Student student = ChooseStudent(student1, student2);
+                    BankAccount account = ChooseAccount(account1, account2);
+                    bool gradeOk = student.Grade >= 80;
+                    bool balanceOk = account.Balance >= 100;
+
+                    if (gradeOk && balanceOk)
+                    {
+                        Console.WriteLine("Eligible");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not Eligible");
+
+                        if (!gradeOk)
+                        {
+                            Console.WriteLine(
+                                $"Failed Grade Requirement (Current Grade: {student.Grade}, Required: 80+)");
+                        }
+
+                        if (!balanceOk)
+                        {
+                            Console.WriteLine(
+                                $"Failed Balance Requirement (Current Balance: {account.Balance}, Required: 100+)");
+                        }
+                    }
+                }
             }
         }
     }
