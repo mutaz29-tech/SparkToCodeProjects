@@ -473,8 +473,8 @@ namespace OPPTask1solution
 
                 ///Case 14 - Scholarship Eligibility Check
                 static void ScholarshipEligibilityCheck(
-    Student student1, Student student2,
-    BankAccount account1, BankAccount account2)
+                  Student student1, Student student2,
+                  BankAccount account1, BankAccount account2)
                 {
                     Student student = ChooseStudent(student1, student2);
                     BankAccount account = ChooseAccount(account1, account2);
@@ -502,6 +502,31 @@ namespace OPPTask1solution
                         }
                     }
                 }
+                /////////////////////////////////////////////////////////////////////////////////
+
+                ///Case 15 - Full Balance Top-Up Flow
+                static void FullBalanceTopUpFlow(BankAccount account1, BankAccount account2)
+                {
+                    BankAccount account = ChooseAccount(account1, account2);
+                    double beforeBalance = account.Balance;
+                    if (beforeBalance < 50)
+                    {
+                        double topUpAmount = 100 - beforeBalance;
+
+                        account.Desposit(topUpAmount);
+
+                        Console.WriteLine("Top-up completed.");
+                        Console.WriteLine($"Balance Before: {beforeBalance}");
+                        Console.WriteLine($"Amount Added: {topUpAmount}");
+                        Console.WriteLine($"Balance After: {account.Balance}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No top-up needed.");
+                        Console.WriteLine($"Current Balance: {account.Balance}");
+                    }
+                }
+
             }
         }
     }
