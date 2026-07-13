@@ -303,7 +303,17 @@ namespace OPPTask1solution
 
                     Console.WriteLine("Inventory Value: " + inventoryValue);
                 }
+                ////////////////////////////////////////////////////////////////////
 
+                ///Case 6 - Register a Student
+                static void RegisterStudent(Student student1, Student student2)
+                {
+                    Student student = ChooseStudent(student1, student2);
+                    Console.Write("Enter email: ");
+                    string email = Console.ReadLine();
+                    student.Register(email);
+                    Console.WriteLine($"{student.Name} has been registered successfully.");
+                }
 
 
             }
