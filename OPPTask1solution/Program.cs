@@ -448,6 +448,27 @@ namespace OPPTask1solution
                         Console.WriteLine("Status: Premium");
                     }
                 }
+                /////////////////////////////////////////
+
+                ///Case 13 - Bulk Sale With Revenue Calculation
+                static void BulkSaleWithRevenue(Product product1, Product product2)
+                {
+                    Product product = ChooseProduct(product1, product2);
+                    Console.Write("Enter quantity to sell: ");
+                    int quantity = int.Parse(Console.ReadLine());
+                    if (product.StockQuantity < quantity)
+                    {
+                        int needed = quantity - product.StockQuantity;
+
+                        Console.WriteLine("Not enough stock to fulfill the order.");
+                        Console.WriteLine($"Additional units needed: {needed}");
+                        return;
+                    }
+                    product.Sell(quantity);
+                    double revenue = quantity * product.Price;
+                    Console.WriteLine($"Total Revenue: {revenue}");
+                    Console.WriteLine($"Remaining Stock: {product.StockQuantity}");
+                }
             }
         }
     }
