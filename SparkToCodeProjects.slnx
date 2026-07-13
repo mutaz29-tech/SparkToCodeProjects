@@ -3,11 +3,7 @@
   <Project Path="Csharpseesion3/Csharpseesion3.csproj" Id="1927c272-3540-4507-a41b-22cc6e680498" />
   <Project Path="Csharpseesion5/Csharpseesion5.csproj" Id="1b54c848-1c96-445a-8d80-4ba33abfdeb6" />
   <Project Path="Csharpsession4/Csharpsession4.csproj" Id="35990b7a-96f6-4835-897e-3150c200c40b" />
-<<<<<<< HEAD
-  <Project Path="OOP_part1/OOP_part1.csproj" Id="3eb68c28-be1e-4d5d-b819-0f1c7906faee" />
-=======
-  <Project Path="MiniProjectsolution/MiniProjectsolution.csproj" Id="add66430-e136-4fca-b430-dbf5daf1ff00" />
->>>>>>> d8311775056001cd4e8032294ef8cca470c30efc
+
   <Project Path="Task1/Task1.csproj" Id="f2361436-27e8-4baa-9593-28667e6b474e" />
   <Project Path="Task2/Task2.csproj" Id="298b50f5-89fc-4525-8349-a9c977bb2dd3" />
   <Project Path="Task3solution/Task3solution.csproj" Id="04aac73a-a7a0-4a44-8184-c4b97e8c9bf7" />
