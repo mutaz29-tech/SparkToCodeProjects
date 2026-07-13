@@ -355,7 +355,38 @@ namespace OPPTask1solution
                         Console.WriteLine("Stock Level: Well Stocked");
                     }
                 }
+                //////////////////////////////////////////////////////////////////
 
+                ///Case 9 - Transfer Between Accounts
+                static void TransferBetweenAccounts(BankAccount account1, BankAccount account2)
+                {
+                    Console.WriteLine("Choose source account (1 or 2):");
+                    int sourceChoice = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Choose destination account (1 or 2):");
+                    int destinationChoice = int.Parse(Console.ReadLine());
+                    if (sourceChoice == destinationChoice)
+                    {
+                        Console.WriteLine("Source and destination accounts must be different.");
+                        return;
+                    }
+                    BankAccount source = (sourceChoice == 1) ? account1 : account2;
+                    BankAccount destination = (destinationChoice == 1) ? account1 : account2;
+                    Console.Write("Enter transfer amount: ");
+                    double amount = double.Parse(Console.ReadLine());
+                    if (source.Balance >= amount)
+                    {
+                        source.Withdraw(amount);
+                        destination.Desposit(amount);
+
+                        Console.WriteLine("Transfer completed successfully.");
+                        Console.WriteLine($"Source Balance: {source.Balance}");
+                        Console.WriteLine($"Destination Balance: {destination.Balance}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Transfer failed: insufficient funds in source account.");
+                    }
+                }
             }
         }
     }
