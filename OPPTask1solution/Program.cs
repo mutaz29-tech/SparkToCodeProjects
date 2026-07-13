@@ -427,6 +427,27 @@ namespace OPPTask1solution
                         Console.WriteLine("Status  : Fail");
                     }
                 }
+                ////////////////////////////////////////////
+
+                ///Case 12 - Account Health Status
+                static void AccountHealthStatus(BankAccount account1, BankAccount account2)
+                {
+                    BankAccount account = ChooseAccount(account1, account2);
+                    Console.WriteLine($"Account Holder: {account.HolderName}");
+                    Console.WriteLine($"Balance: {account.Balance}");
+                    if (account.Balance < 50)
+                    {
+                        Console.WriteLine("Status: Low Balance");
+                    }
+                    else if (account.Balance <= 1000)
+                    {
+                        Console.WriteLine("Status: Healthy");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status: Premium");
+                    }
+                }
             }
         }
     }
