@@ -387,6 +387,27 @@ namespace OPPTask1solution
                         Console.WriteLine("Transfer failed: insufficient funds in source account.");
                     }
                 }
+                ////////////////////////////////////////////////////////////////////
+
+                ///Case 10 - Update Student Grade (Validated)
+                static void UpdateStudentGrade(Student student1, Student student2)
+                {
+                    Student student = ChooseStudent(student1, student2);
+                    Console.Write("Enter new grade (0-100): ");
+                    if (!int.TryParse(Console.ReadLine(), out int newGrade))
+                    {
+                        Console.WriteLine("Invalid input. Please enter a valid number.");
+                        return;
+                    }
+                    if (newGrade < 0 || newGrade > 100)
+                    {
+                        Console.WriteLine("Grade must be between 0 and 100.");
+                        return;
+                    }
+                    student.Grade = newGrade;
+                    Console.WriteLine("Grade updated successfully.");
+                    Console.WriteLine($"New Grade: {student.Grade}");
+                }
             }
         }
     }
