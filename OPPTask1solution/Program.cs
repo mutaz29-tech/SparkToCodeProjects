@@ -11,9 +11,15 @@ namespace OPPTask1solution
             HolderName = holderName;
             Balance = balance;
         }
+        public bool IsOverdrawn{
+            get
+            {
+                return Balance< 0;
+            }
+        }
 
-        //properties
-        public int AccountNumber { get; set; }
+//properties
+public int AccountNumber { get; set; }
         public string HolderName { get; set; }
         public double Balance { get; set; }
         //methods
@@ -55,6 +61,16 @@ namespace OPPTask1solution
     //class Student
     class Student
     {
+        private static int studentCount = 0;
+        public Student(){
+            studentCount++;
+        }
+        // Static method
+        public static int GetStudentCount()
+        {
+            return studentCount;
+        }
+
         //poroperties (store multi data /function)
         public int Grade { get; set; }
         public string Name { get; set; }
@@ -579,6 +595,35 @@ namespace OPPTask1solution
                     Console.WriteLine($"Holder Name: {newAccount.HolderName}");
                     Console.WriteLine($"Balance: {newAccount.Balance}");
                 }
+                /////////////////////////////////////////////////////////
+
+                ///Case 17 - Total Students Counter [Static Field & Method]
+                // Case 17 - Total Students Counter
+                static void TotalStudentsCounter()
+                {
+                    Console.WriteLine($"Total Students Created: {Student.GetStudentCount()}");
+                }
+                ///////////////////////////////////////////
+
+                ///
+                // Case 18 - Overdrawn Account Check
+                static void OverdrawnAccountCheck(BankAccount account1, BankAccount account2)
+                {
+                    BankAccount account = ChooseAccount(account1, account2);
+
+                    Console.WriteLine($"Account Holder: {account.HolderName}");
+                    Console.WriteLine($"Balance: {account.Balance}");
+
+                    if (account.IsOverdrawn)
+                    {
+                        Console.WriteLine("Status: Overdrawn");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status: Not Overdrawn");
+                    }
+                }
+
 
             }
         }
