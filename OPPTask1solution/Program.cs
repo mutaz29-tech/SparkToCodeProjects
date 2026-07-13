@@ -70,6 +70,8 @@ public int AccountNumber { get; set; }
         {
             return studentCount;
         }
+        private string pin;
+
 
         //poroperties (store multi data /function)
         public int Grade { get; set; }
@@ -81,6 +83,17 @@ public int AccountNumber { get; set; }
         {
             email = Email;
             SendEmail();
+        }
+
+        public string SecurityPIN
+        {
+            set
+            {
+                if (value.Length == 4)
+                {
+                    pin = value;
+                }
+            }
         }
         private void SendEmail()
         {
@@ -622,6 +635,23 @@ public int AccountNumber { get; set; }
                     {
                         Console.WriteLine("Status: Not Overdrawn");
                     }
+                }
+                /////////////////////////////////////
+
+                ///
+                // Case 19 - Set Student Security PIN
+                static void SetStudentSecurityPin(Student student1, Student student2)
+                {
+                    Student student = ChooseStudent(student1, student2);
+                    Console.Write("Enter a 4-digit PIN: ");
+                    string pin = Console.ReadLine();
+                    if (pin.Length != 4 || !int.TryParse(pin, out _))
+                    {
+                        Console.WriteLine("Invalid PIN. PIN must be exactly 4 digits.");
+                        return;
+                    }
+                    student.SecurityPIN = pin;
+                    Console.WriteLine("Security PIN has been set successfully.");
                 }
 
 
