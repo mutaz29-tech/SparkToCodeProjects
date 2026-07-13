@@ -5,6 +5,13 @@ namespace OPPTask1solution
     //class BankAccoun
     public class BankAccount
     {
+        public BankAccount(int accountNumber, string? holderName, double balance)
+        {
+            AccountNumber = accountNumber;
+            HolderName = holderName;
+            Balance = balance;
+        }
+
         //properties
         public int AccountNumber { get; set; }
         public string HolderName { get; set; }
@@ -110,6 +117,24 @@ namespace OPPTask1solution
         private void LogTransaction()
         {
             Console.WriteLine($"Transaction logged");
+        }
+        public class BankAccount
+        {
+            // Parameterized Constructor
+            public BankAccount(int accountNumber, string holderName, double balance)
+            {
+                AccountNumber = accountNumber;
+                HolderName = holderName;
+                Balance = balance;
+            }
+            // Default Constructor (optional)
+            public BankAccount()
+            {
+            }
+            public int AccountNumber { get; set; }
+            public string HolderName { get; set; }
+            public double Balance { get; set; }
+            // Existing methods...
         }
     }
     public class Program
@@ -525,6 +550,34 @@ namespace OPPTask1solution
                         Console.WriteLine("No top-up needed.");
                         Console.WriteLine($"Current Balance: {account.Balance}");
                     }
+                }
+                ////////////////////////////////////////////////////////////////////
+
+                ///Case 16 - Quick Account Opening [Parameterized Constructor]
+               
+                
+                static void QuickAccountOpening()
+                {
+                    Console.Write("Enter Account Number: ");
+                    int accountNumber = int.Parse(Console.ReadLine());
+
+                    Console.Write("Enter Holder Name: ");
+                    string holderName = Console.ReadLine();
+
+                    Console.Write("Enter Starting Balance: ");
+                    double balance = double.Parse(Console.ReadLine());
+
+                    // Create object using ONLY the constructor
+                    BankAccount newAccount = new BankAccount(
+                        accountNumber,
+                        holderName,
+                        balance
+                        );
+
+                    Console.WriteLine("\n===== New Account Created =====");
+                    Console.WriteLine($"Account Number: {newAccount.AccountNumber}");
+                    Console.WriteLine($"Holder Name: {newAccount.HolderName}");
+                    Console.WriteLine($"Balance: {newAccount.Balance}");
                 }
 
             }
