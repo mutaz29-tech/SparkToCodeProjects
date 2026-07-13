@@ -314,6 +314,24 @@ namespace OPPTask1solution
                     student.Register(email);
                     Console.WriteLine($"{student.Name} has been registered successfully.");
                 }
+                ////////////////////////////////////////////////////////////////////////
+
+                ///Case 7 - Compare Two Account Balances
+                static void CompareAccountBalances(BankAccount account1, BankAccount account2)
+                {
+                    if (account1.Balance > account2.Balance)
+                    {
+                        Console.WriteLine($"{account1.HolderName} has more money.");
+                    }
+                    else if (account2.Balance > account1.Balance)
+                    {
+                        Console.WriteLine($"{account2.HolderName} has more money.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Both accounts have the same balance.");
+                    }
+                }
 
 
             }
