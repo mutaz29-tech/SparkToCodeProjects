@@ -332,7 +332,29 @@ namespace OPPTask1solution
                         Console.WriteLine("Both accounts have the same balance.");
                     }
                 }
+                //////////////////////////////////////////////////////////////////////////////
 
+                ///Case 8 - Restock Product & Stock Level Check
+                static void RestockProduct(Product product1, Product product2)
+                {
+                    Product product = ChooseProduct(product1, product2);
+                    Console.Write("Enter quantity to restock: ");
+                    int quantity = int.Parse(Console.ReadLine());
+                    product.Restock(quantity);
+                    Console.WriteLine("Updated Stock: " + product.StockQuantity);
+                    if (product.StockQuantity < 10)
+                    {
+                        Console.WriteLine("Stock Level: Low");
+                    }
+                    else if (product.StockQuantity >= 10 && product.StockQuantity <= 49)
+                    {
+                        Console.WriteLine("Stock Level: Moderate");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Stock Level: Well Stocked");
+                    }
+                }
 
             }
         }
