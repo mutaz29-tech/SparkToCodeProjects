@@ -408,6 +408,25 @@ namespace OPPTask1solution
                     Console.WriteLine("Grade updated successfully.");
                     Console.WriteLine($"New Grade: {student.Grade}");
                 }
+                /////////////////////////////////////////////////////////////////
+
+                ///Case 11 - Student Report Card
+                static void StudentReportCard(Student student1, Student student2)
+                {
+                    Student student = ChooseStudent(student1, student2);
+                    Console.WriteLine(" Student Report Card ");
+                    Console.WriteLine($"Name    : {student.Name}");
+                    Console.WriteLine($"Address : {student.Addres}");
+                    Console.WriteLine($"Grade   : {student.Grade}");
+                    if (student.Grade >= 60)
+                    {
+                        Console.WriteLine("Status  : Pass");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Status  : Fail");
+                    }
+                }
             }
         }
     }
