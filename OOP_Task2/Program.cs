@@ -161,8 +161,7 @@ internal class Program
                 case 2:
                 
                     {
-                        Console.WriteLine("\n=== REGISTER NEW GUEST ===");
-
+                        Console.WriteLine(" === REGISTER NEW GUEST ===");
                         // Guest Name
                         Console.Write("Enter Guest Name: ");
                         string guestName = Console.ReadLine();
@@ -203,12 +202,70 @@ internal class Program
                         Console.WriteLine($"Total Guests Registered: {guests.Count}");
                         break;
                     }
+                ////////////////////////////////////////////////////////////////
 
-
-
+                ///Case 03 Book a Room for a Guest
                 case 3:
-                    Console.WriteLine("Book Room");
-                    break;
+                    {
+                        Console.WriteLine(" === BOOK A ROOM FOR A GUEST ===");
+                        // Get Guest ID
+                        Console.Write("Enter Guest ID: ");
+                        string guestId = Console.ReadLine();
+
+                        // Get Room Number
+                        Console.Write("Enter Room Number: ");
+                        int roomNumber;
+
+                        while (!int.TryParse(Console.ReadLine(), out roomNumber))
+                        {
+                            Console.Write("Invalid room number. Try again: ");
+                        }
+
+                        // Find Guest using LINQ FirstOrDefault()
+                        Guest guest = guests.FirstOrDefault(g => g.GuestId == guestId);
+
+                        if (guest == null)
+                        {
+                            Console.WriteLine("Guest not found.");
+                            break;
+                        }
+
+                        // Find Room using LINQ FirstOrDefault()
+                        Room room = rooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
+
+                        if (room == null)
+                        {
+                            Console.WriteLine("Room not found.");
+                            break;
+                        }
+
+                        // Check Availability
+                        if (!room.IsAvailable)
+                        {
+                            Console.WriteLine("Room is already booked.");
+                            break;
+                        }
+
+                        // Assign Room to Guest
+                        guest.RoomNumber = room.RoomNumber;
+
+                        // Mark Room as Booked
+                        room.IsAvailable = false;
+
+                        // Calculate Cost
+                        double totalCost = guest.CalculateTotalCost(rooms);
+
+                        // Confirmation
+                        Console.WriteLine("\n=== BOOKING CONFIRMATION ===");
+                        Console.WriteLine($"Guest Name      : {guest.GuestName}");
+                        Console.WriteLine($"Room Number     : {room.RoomNumber}");
+                        Console.WriteLine($"Room Type       : {room.RoomType}");
+                        Console.WriteLine($"Price Per Night : {room.PricePerNight:C}");
+                        Console.WriteLine($"Total Nights    : {guest.TotalNights}");
+                        Console.WriteLine($"Total Cost      : {totalCost:C}");
+
+                        break;
+                    }
 
 
                 case 4:
