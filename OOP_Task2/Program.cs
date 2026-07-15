@@ -1,4 +1,6 @@
-﻿namespace OOP_Task2
+﻿using OOP_Task2;
+
+namespace OOP_Task2
 {
     //class Room
     internal class Room
@@ -72,12 +74,119 @@
     }
 }
 internal class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        // Create a list to store all rooms
+        List<Room> rooms = new List<Room>();
+
+        // Create a list to store all guests
+        List<Guest> guests = new List<Guest>();
+
+        rooms.Add(new Room(101, "double", 20.00, true));
+        rooms.Add(new Room(202, "single", 30, true));
+        rooms.Add(new Room(303, "single", 40, true));
+        rooms.Add(new Room(403, "double", 50, true));
+        rooms.Add(new Room(501, "Suite", 60, true));
+        rooms.Add(new Room(604, "double", 70.00, true));
+
+        int choice;
+
+        do
         {
-         
+            Console.Clear();
+            Console.WriteLine("GRAND VISTA HOTEL - MANAGEMENT SYSTEM\"");
+            Console.WriteLine(".............................................");
+            Console.WriteLine("1. Add New Room");
+            Console.WriteLine("2. Register New Guest");
+            Console.WriteLine("3. Book a Room for a Guest");
+            Console.WriteLine("4. View All Rooms");
+            Console.WriteLine("5. View All Gusts");
+            Console.WriteLine("6. Search & Filter Rooms");
+            Console.WriteLine("7. Guest & Booking Statistics");
+            Console.WriteLine("8. Update Room Price");
+            Console.WriteLine("9. Guest Lookup by Name");
+            Console.WriteLine("10. Room Type Breakdown Report");
+            Console.WriteLine("11. Check Out a Guest");
+            Console.WriteLine("12. Remove Unavailable Rooms");
+            Console.WriteLine("13. Extend Guest Stay");
+            Console.WriteLine("14. Highest Revenue Booking");
+            Console.WriteLine("15. Guest Pagination Viewer");
+            Console.WriteLine("0. Exit");
+
+            Console.Write("Enter your choice: ");
+            choice = Convert.ToInt32(Console.ReadLine());
 
 
-        }
+            switch (choice)
+
+            {
+                case 1:
+                    Console.WriteLine("Add New Room");
+                    break;
+                case 2:
+                    Console.WriteLine("Register New Guest");
+                    break;
+
+
+                case 3:
+                    Console.WriteLine("Book Room");
+                    break;
+
+
+                case 4:
+
+                    // Display all rooms
+                    foreach (Room room in rooms)
+                    {
+                        room.DisplayRoom();
+                    }
+
+                    break;
+
+
+                case 5:
+
+                    // Display all guests
+                    if (guests.Count == 0)
+                    {
+                        Console.WriteLine("No guests found.");
+                    }
+                    else
+                    {
+                        foreach (Guest guest in guests)
+                        {
+                            guest.DisplayGuest();
+                        }
+                    }
+
+                    break;
+
+
+                case 0:
+
+                    Console.WriteLine("Exit program");
+                    break;
+
+
+                default:
+
+                    Console.WriteLine("Invalid choice");
+                    break;
+            }
+
+
+            if (choice != 0)
+            {
+                Console.WriteLine("Press any key...");
+                Console.ReadKey();
+            }
+
+
+        } while (choice != 0);
+
     }
+
+}
+
 
