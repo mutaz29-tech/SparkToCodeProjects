@@ -36,13 +36,17 @@ namespace OOP_Task2
     //class Guest
     internal class Guest
     {
-        public int GuestId { get; set; }
+        public string GuestId { get; set; }
         public string GuestName { get; set; }
         public int RoomNumber { get; set; }
-        public DateTime CheckInDate { get; set; }
+        public string CheckInDate { get; set; }
         public int TotalNights { get; set; }
 
-        public Guest(int guestId, string guestName, int roomNumber, DateTime checkInDate, int totalNights)
+        public Guest(string guestId,
+             string guestName,
+             int roomNumber,
+             string checkInDate,
+             int totalNights)
         {
             GuestId = guestId;
             GuestName = guestName;
@@ -56,7 +60,7 @@ namespace OOP_Task2
             Console.WriteLine("Guest Id:" + GuestId);
             Console.WriteLine("Guest Name:" + GuestName);
             Console.WriteLine("Room Number:" + RoomNumber);
-            Console.WriteLine("Check In Date" + CheckInDate.ToShortDateString());
+            Console.WriteLine("Check In Date" + CheckInDate);
             Console.WriteLine("Total Nights:" + TotalNights);
         }
 
@@ -152,10 +156,54 @@ internal class Program
                     Console.WriteLine("Price Per Night: " + price);
                     Console.WriteLine("Total Rooms: " + rooms.Count);
                     break;
-
+                ////////////////////////////////////////////////////
+                ///Case 02 Register New Guest
                 case 2:
-                    Console.WriteLine("Register New Guest");
-                    break;
+                
+                    {
+                        Console.WriteLine("\n=== REGISTER NEW GUEST ===");
+
+                        // Guest Name
+                        Console.Write("Enter Guest Name: ");
+                        string guestName = Console.ReadLine();
+
+                        // Check-In Date
+                        Console.Write("Enter Check-In Date: ");
+                        string checkInDate = Console.ReadLine();
+
+                        // Number of Nights Validation
+                        int totalNights;
+                        Console.Write("Enter Number of Nights: ");
+
+                        while (!int.TryParse(Console.ReadLine(), out totalNights) ||
+                               totalNights <= 0)
+                        {
+                            Console.Write("Invalid input. Enter a positive number of nights: ");
+                        }
+                        // Auto-Generate Guest ID
+                        string guestId = $"G{(guests.Count + 1):D3}";
+                        // Create Guest Object
+                        Guest newGuest = new Guest(
+                            guestId,
+                            guestName,
+                            "Not Assigned",
+                            checkInDate,
+                            totalNights
+                        );
+                        // Add to List
+                        guests.Add(newGuest);
+                        // Confirmation Message
+                        Console.WriteLine(" Guest Registered Successfully!");
+                        Console.WriteLine("--------------------------------");
+                        Console.WriteLine($"Guest ID      : {newGuest.GuestId}");
+                        Console.WriteLine($"Guest Name    : {newGuest.GuestName}");
+                        Console.WriteLine($"Room Number   : {newGuest.RoomNumber}");
+                        Console.WriteLine($"Check-In Date : {newGuest.CheckInDate}");
+                        Console.WriteLine($"Total Nights  : {newGuest.TotalNights}");
+                        Console.WriteLine($"Total Guests Registered: {guests.Count}");
+                        break;
+                    }
+
 
 
                 case 3:
