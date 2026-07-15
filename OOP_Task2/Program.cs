@@ -577,6 +577,44 @@ internal class Program
 
                         break;
                     }
+                ///////////////////////////////////////////////
+
+                ///Case 09 Guest Lookup by Name
+                case 9:
+                    {
+                        Console.WriteLine("\n=== GUEST LOOKUP BY NAME ===");
+
+                        Console.Write("Enter Name or Partial Name: ");
+                        string searchText = Console.ReadLine();
+
+                        // Search using LINQ Where() (case-insensitive)
+                        var matchingGuests = guests.Where(g =>
+                            g.GuestName.Contains(searchText,
+                            StringComparison.OrdinalIgnoreCase));
+
+                        // Check if any matches found
+                        if (!matchingGuests.Any())
+                        {
+                            Console.WriteLine("No guests matched that search.");
+                            break;
+                        }
+
+                        // Display count
+                        Console.WriteLine($"\nMatches Found: {matchingGuests.Count()}");
+                 
+
+                        // Display guests
+                        foreach (var guest in matchingGuests)
+                        {
+                            Console.WriteLine($"Guest ID    : {guest.GuestId}");
+                            Console.WriteLine($"Guest Name  : {guest.GuestName}");
+                            Console.WriteLine($"Room Number : {guest.RoomNumber}");
+                           
+                        }
+
+                        break;
+                    }
+                    //////////////////////////////////////////
 
 
                 case 0:
