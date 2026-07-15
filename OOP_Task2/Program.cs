@@ -299,24 +299,42 @@ internal class Program
 
                         break;
                     }
+                ////////////////////////////////////////
 
+                ///Case 05 View All Guests
 
                 case 5:
+                    {
+                        Console.WriteLine("\n=== ALL GUESTS ===");
 
-                    // Display all guests
-                    if (guests.Count == 0)
-                    {
-                        Console.WriteLine("No guests found.");
-                    }
-                    else
-                    {
-                        foreach (Guest guest in guests)
+                        // Check if guest list is empty
+                        if (guests.Count() == 0)
                         {
-                            guest.DisplayGuest();
+                            Console.WriteLine("No guests have been registered yet.");
+                            break;
                         }
-                    }
 
-                    break;
+                        // Display total guest count
+                        Console.WriteLine($"Total Guests: {guests.Count()}");
+                        Console.WriteLine();
+
+                        // Sort guests alphabetically by name
+                        var sortedGuests = guests.OrderBy(g => g.GuestName);
+
+                        // Display guest details
+                        foreach (var guest in sortedGuests)
+                        {
+                            Console.WriteLine($"Guest ID      : {guest.GuestId}");
+                            Console.WriteLine($"Guest Name    : {guest.GuestName}");
+                            Console.WriteLine($"Room Number   : {guest.RoomNumber}");
+                            Console.WriteLine($"Check-In Date : {guest.CheckInDate}");
+                            Console.WriteLine($"Total Nights  : {guest.TotalNights}");
+                            Console.WriteLine(new string('-', 35));
+                        }
+
+                        break;
+                    }
+                    //////////////////////////////////////////////////
 
 
                 case 0:
