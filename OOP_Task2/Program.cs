@@ -904,7 +904,58 @@ internal class Program
 
                         break;
                     }
-                    /////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////
+
+                //case 15  Guest Pagination Viewer
+                case 15:
+                    {
+                        Console.WriteLine("\n=== GUEST PAGINATION VIEWER ===");
+
+                        if (!guests.Any())
+                        {
+                            Console.WriteLine("No guests have been registered yet.");
+                            break;
+                        }
+
+                        const int pageSize = 3;
+
+                        int totalGuests = guests.Count();
+                        int totalPages = (int)Math.Ceiling((double)totalGuests / pageSize);
+
+                        Console.Write("Enter Page Number: ");
+
+                        int pageNumber;
+                        if (!int.TryParse(Console.ReadLine(), out pageNumber) || pageNumber <= 0)
+                        {
+                            Console.WriteLine("That page does not exist.");
+                            break;
+                        }
+
+                        if (pageNumber > totalPages)
+                        {
+                            Console.WriteLine("That page does not exist.");
+                            break;
+                        }
+
+                        var pageGuests = guests
+                            .Skip((pageNumber - 1) * pageSize)
+                            .Take(pageSize);
+
+                        Console.WriteLine($"\nPage {pageNumber} of {totalPages}");
+                        Console.WriteLine("--------------------------------");
+
+                        foreach (var guest in pageGuests)
+                        {
+                            Console.WriteLine($"Guest ID      : {guest.GuestId}");
+                            Console.WriteLine($"Guest Name    : {guest.GuestName}");
+                            Console.WriteLine($"Room Number   : {guest.RoomNumber}");
+                            Console.WriteLine($"Check-In Date : {guest.CheckInDate}");
+                            Console.WriteLine($"Total Nights  : {guest.TotalNights}");
+                            Console.WriteLine("--------------------------------");
+                        }
+
+                        break;
+                    }
 
                 case 0:
 
