@@ -812,9 +812,59 @@ internal class Program
 
                         break;
                     }
-                    ///////////////////////////////////////////////////
+                ///////////////////////////////////////////////////
 
+                //Case 13 Update Guest Information
+                case 13:
+                    {
+                        Console.WriteLine("\n=== EXTEND GUEST STAY ===");
 
+                        // Step 1: Get Guest ID
+                        Console.Write("Enter Guest ID: ");
+                        string guestId = Console.ReadLine();
+
+                        // Step 2: Find Guest using FirstOrDefault()
+                        Guest guest = guests.FirstOrDefault(g => g.GuestId == guestId);
+
+                        if (guest == null)
+                        {
+                            Console.WriteLine("Guest not found.");
+                            break;
+                        }
+
+                        // Step 3: Check active booking
+                        if (guest.RoomNumber == "Not Assigned")
+                        {
+                            Console.WriteLine("This guest has no active booking to extend.");
+                            break;
+                        }
+
+                        // Step 4: Validate additional nights
+                        Console.Write("Enter Additional Nights: ");
+                        int additionalNights;
+
+                        if (!int.TryParse(Console.ReadLine(), out additionalNights) ||
+                            additionalNights <= 0)
+                        {
+                            Console.WriteLine("Invalid input. Additional nights must be a positive integer.");
+                            break;
+                        }
+
+                        // Step 5: Update stay
+                        guest.TotalNights += additionalNights;
+
+                        double newTotalCost = guest.CalculateTotalCost(rooms);
+
+                        Console.WriteLine("\n=== STAY EXTENDED SUCCESSFULLY ===");
+                        Console.WriteLine($"Guest Name       : {guest.GuestName}");
+                        Console.WriteLine($"Room Number      : {guest.RoomNumber}");
+                        Console.WriteLine($"Additional Nights: {additionalNights}");
+                        Console.WriteLine($"Updated Nights   : {guest.TotalNights}");
+                        Console.WriteLine($"New Total Cost   : OMR {newTotalCost:F2}");
+
+                        break;
+                    }
+                    //////////////////////////////////////////////////
                 case 0:
 
                     Console.WriteLine("Exit program");
