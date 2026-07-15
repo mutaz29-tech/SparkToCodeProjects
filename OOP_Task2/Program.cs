@@ -614,8 +614,54 @@ internal class Program
 
                         break;
                     }
-                    //////////////////////////////////////////
+                //////////////////////////////////////////
 
+                ///Case 10 Room Type Breakdown Report
+                case 10:
+                    {
+                        Console.WriteLine("\n=== ROOM TYPE BREAKDOWN REPORT ===");
+
+                        string[] roomTypes = { "Single", "Double", "Suite" };
+
+                        foreach (string type in roomTypes)
+                        {
+                            int count = rooms.Count(r =>
+                                r.RoomType.Equals(type, StringComparison.OrdinalIgnoreCase));
+
+                            Console.WriteLine($"\nRoom Type: {type}");
+                            Console.WriteLine($"Total Rooms: {count}");
+
+                            if (count > 0)
+                            {
+                                double averagePrice = rooms
+                                    .Where(r => r.RoomType.Equals(type, StringComparison.OrdinalIgnoreCase))
+                                    .Average(r => (double)r.PricePerNight);
+
+                                Console.WriteLine($"Average Price: OMR {averagePrice:F2}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Average Price: N/A");
+                            }
+                        }
+
+                        // Overall Average Price
+                        if (rooms.Any())
+                        {
+                            double overallAverage = rooms
+                                .Average(r => (double)r.PricePerNight);
+
+                          
+                            Console.WriteLine($"Overall Average Price: OMR {overallAverage:F2}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nOverall Average Price: N/A");
+                        }
+
+                        break;
+                    }
+                    /////////////////////////////////////
 
                 case 0:
 
