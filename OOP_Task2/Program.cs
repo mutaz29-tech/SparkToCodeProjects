@@ -527,6 +527,57 @@ internal class Program
 
                         break;
                     }
+                //////////////////////////////////////////////////////////
+
+                ///Case 08 Update Room Price
+                case 8:
+                    {
+                        Console.WriteLine("\n=== UPDATE ROOM PRICE ===");
+
+                        // Get Room Number
+                        Console.Write("Enter Room Number: ");
+                        int roomNumber;
+
+                        if (!int.TryParse(Console.ReadLine(), out roomNumber))
+                        {
+                            Console.WriteLine("Invalid room number.");
+                            break;
+                        }
+
+                        // Find Room using LINQ FirstOrDefault()
+                        Room room = rooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
+
+                        if (room == null)
+                        {
+                            Console.WriteLine("Room not found.");
+                            break;
+                        }
+
+                        // Store old price
+                        decimal oldPrice = room.PricePerNight;
+
+                        // Get new price
+                        Console.Write("Enter New Price Per Night: ");
+                        decimal newPrice;
+
+                        if (!decimal.TryParse(Console.ReadLine(), out newPrice) || newPrice <= 0)
+                        {
+                            Console.WriteLine("Invalid price. No changes made.");
+                            break;
+                        }
+
+                        // Update price
+                        room.PricePerNight = newPrice;
+
+                        // Confirmation
+                        Console.WriteLine("\nRoom price updated successfully!");
+                        Console.WriteLine($"Room Number : {room.RoomNumber}");
+                        Console.WriteLine($"Old Price   : OMR {oldPrice:F2}");
+                        Console.WriteLine($"New Price   : OMR {newPrice:F2}");
+
+                        break;
+                    }
+
 
                 case 0:
 
