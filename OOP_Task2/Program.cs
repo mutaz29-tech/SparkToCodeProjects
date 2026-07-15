@@ -661,8 +661,87 @@ internal class Program
 
                         break;
                     }
-                    /////////////////////////////////////
+                /////////////////////////////////////
 
+                //Case 11 Check Out a Guest
+                case 11:
+                    {
+                        Console.WriteLine("\n=== CHECK OUT A GUEST ===");
+
+                        // Step 1: Get Guest ID
+                        Console.Write("Enter Guest ID: ");
+                        string guestId = Console.ReadLine();
+
+                        // Step 2: Find Guest
+                        Guest guest = guests.FirstOrDefault(g => g.GuestId == guestId);
+
+                        if (guest == null)
+                        {
+                            Console.WriteLine("Guest not found.");
+                            break;
+                        }
+
+                        // Step 3: Ensure Guest Has a Booking
+                        if (guest.RoomNumber == "Not Assigned")
+                        {
+                            Console.WriteLine("This guest has no active booking.");
+                            break;
+                        }
+
+                        // Step 4: Find Linked Room
+                        int roomNo = int.Parse(guest.RoomNumber);
+
+                        Room room = rooms.FirstOrDefault(r => r.RoomNumber == roomNo);
+
+                        if (room == null)
+                        {
+                            Console.WriteLine("Linked room record not found.");
+                            break;
+                        }
+
+                        // Step 5: Display Final Bill
+                        double totalCost = guest.CalculateTotalCost(rooms);
+
+                        Console.WriteLine("\n===== FINAL BILL =====");
+                        Console.WriteLine($"Guest Name      : {guest.GuestName}");
+                        Console.WriteLine($"Room Number     : {room.RoomNumber}");
+                        Console.WriteLine($"Room Type       : {room.RoomType}");
+                        Console.WriteLine($"Check-In Date   : {guest.CheckInDate}");
+                        Console.WriteLine($"Total Nights    : {guest.TotalNights}");
+                        Console.WriteLine($"Price Per Night : OMR {room.PricePerNight:F2}");
+                        Console.WriteLine($"Total Cost      : OMR {totalCost:F2}");
+
+                        // Step 6: Confirm Checkout
+                        Console.Write("\nConfirm Checkout (Y/N): ");
+                        string confirm = Console.ReadLine().ToUpper();
+
+                        if (confirm == "Y")
+                        {
+                            // Free Room First
+                            room.IsAvailable = true;
+
+                            // Remove Guest
+                            guests.Remove(guest);
+
+                            // Step 7: Summary
+                            Console.WriteLine("\nCheckout Successful!");
+                            Console.WriteLine($"Guest {guest.GuestName} has been checked out.");
+
+                            Console.WriteLine($"\nTotal Guests: {guests.Count}");
+                            Console.WriteLine($"Total Rooms : {rooms.Count}");
+
+                            bool roomAvailable =
+                                rooms.Any(r => r.RoomNumber == roomNo && r.IsAvailable);
+
+                            Console.WriteLine($"Room Available: {roomAvailable}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Checkout cancelled. No changes were made.");
+                        }
+
+                        break;
+                    }
                 case 0:
 
                     Console.WriteLine("Exit program");
