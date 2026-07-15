@@ -90,6 +90,7 @@ internal class Program
         rooms.Add(new Room(501, "Suite", 60, true));
         rooms.Add(new Room(604, "double", 70.00, true));
 
+        //Main Menu Blueprint
         int choice;
 
         do
