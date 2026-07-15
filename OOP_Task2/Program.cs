@@ -471,6 +471,62 @@ internal class Program
 
                         break;
                     }
+                /////////////////////////////////////////////
+
+                ///Case 07 Guest & Booking Statistics
+                case 7:
+                    {
+                        Console.WriteLine("\n=== GUEST & BOOKING STATISTICS ===");
+
+                        // Total Guests
+                        Console.WriteLine($"Total Registered Guests : {guests.Count()}");
+
+                        // Guests with Active Bookings
+                        Console.WriteLine($"Guests With Bookings    : {guests.Count(g => g.RoomNumber != "Not Assigned")}");
+
+                        // Room Statistics
+                        Console.WriteLine($"Total Rooms             : {rooms.Count()}");
+                        Console.WriteLine($"Booked Rooms            : {rooms.Count(r => !r.IsAvailable)}");
+
+                        // Active Bookings
+                        var bookedGuests = guests
+                            .Where(g => g.RoomNumber != "Not Assigned");
+
+                        if (!bookedGuests.Any())
+                        {
+                            Console.WriteLine("\nNo active bookings recorded.");
+                            break;
+                        }
+
+                        // Average Stay Length
+                        Console.WriteLine($"Average Nights Stayed   : {bookedGuests.Average(g => g.TotalNights):F2}");
+
+                        // Top 3 Highest Spending Guests
+                        Console.WriteLine("\n=== TOP 3 HIGHEST-SPENDING GUESTS ===");
+
+                        var topGuests = bookedGuests
+                            .OrderByDescending(g => g.CalculateTotalCost(rooms))
+                            .Take(3);
+
+                        foreach (var guest in topGuests)
+                        {
+                            Console.WriteLine(
+                                $"{guest.GuestName} | Room {guest.RoomNumber} | OMR {guest.CalculateTotalCost(rooms):F2}");
+                        }
+
+                        // Guest Booking Summary
+                        Console.WriteLine("\n=== BOOKING SUMMARY ===");
+
+                        var summaries = bookedGuests.Select(g =>
+                            $"{g.GuestName} — Room {g.RoomNumber} — {g.TotalNights} nights — OMR {g.CalculateTotalCost(rooms):F2}");
+
+                        foreach (var summary in summaries)
+                        {
+                            Console.WriteLine(summary);
+                        }
+
+                        break;
+                    }
 
                 case 0:
 
