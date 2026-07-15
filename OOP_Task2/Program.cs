@@ -864,7 +864,48 @@ internal class Program
 
                         break;
                     }
-                    //////////////////////////////////////////////////
+
+                //////////////////////////////////////////////////
+
+                ///Case 14  Highest Revenue Booking
+                case 14:
+                    {
+                        Console.WriteLine("\n=== HIGHEST REVENUE BOOKING ===");
+
+                        // Step 1: Filter active bookings
+                        var activeBookings = guests
+                            .Where(g => g.RoomNumber != "Not Assigned");
+
+                        // Step 2: Check if any active bookings exist
+                        if (!activeBookings.Any())
+                        {
+                            Console.WriteLine("No active bookings recorded.");
+                            break;
+                        }
+
+                        // Step 3 & 4: Project data, sort by total cost descending, take top 1
+                        var topBooking = activeBookings
+                            .Select(g => new
+                            {
+                                GuestName = g.GuestName,
+                                RoomNumber = g.RoomNumber,
+                                TotalCost = g.CalculateTotalCost(rooms)
+                            })
+                            .OrderByDescending(g => g.TotalCost)
+                            .Take(1);
+
+                        // Step 5: Display result
+                        foreach (var booking in topBooking)
+                        {
+                            Console.WriteLine($"Guest Name  : {booking.GuestName}");
+                            Console.WriteLine($"Room Number : {booking.RoomNumber}");
+                            Console.WriteLine($"Total Cost  : OMR {booking.TotalCost:F2}");
+                        }
+
+                        break;
+                    }
+                    /////////////////////////////////////////////////////////////////
+
                 case 0:
 
                     Console.WriteLine("Exit program");
