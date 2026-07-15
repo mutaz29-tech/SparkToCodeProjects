@@ -266,17 +266,39 @@ internal class Program
 
                         break;
                     }
+                /////////////////////////////////////////////////////////////
 
-
+                ///Case 04 View All Rooms
                 case 4:
-
-                    // Display all rooms
-                    foreach (Room room in rooms)
                     {
-                        room.DisplayRoom();
-                    }
+                        Console.WriteLine(" ALL ROOMS ");
 
-                    break;
+                        // Check if list is empty
+                        if (rooms.Count() == 0)
+                        {
+                            Console.WriteLine("No rooms have been added yet.");
+                            break;
+                        }
+
+                        // Display total room count
+                        Console.WriteLine($"Total Rooms: {rooms.Count()}");
+                        Console.WriteLine();
+
+                        // Sort by room number using LINQ OrderBy()
+                        var sortedRooms = rooms.OrderBy(r => r.RoomNumber);
+
+                        // Display room details
+                        foreach (var room in sortedRooms)
+                        {
+                            Console.WriteLine($"Room Number : {room.RoomNumber}");
+                            Console.WriteLine($"Room Type   : {room.RoomType}");
+                            Console.WriteLine($"Price/Night : {room.PricePerNight:C}");
+                            Console.WriteLine($"Status      : {(room.IsAvailable ? "Available" : "Booked")}");
+                            Console.WriteLine(new string('-', 30));
+                        }
+
+                        break;
+                    }
 
 
                 case 5:
