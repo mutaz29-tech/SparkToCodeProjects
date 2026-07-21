@@ -46,7 +46,19 @@ CREATE TABLE Project
     Pname VARCHAR(50) NOT NULL UNIQUE,
     Plocation VARCHAR(50),
     Dnum INT NOT NULL,
-
     FOREIGN KEY (Dnum)
         REFERENCES Department(Dnumber)
+);
+/////////////////////////////////////////
+///Works_On
+CREATE TABLE Works_On
+(
+    Essn CHAR(9),
+    Pno INT,
+    Hours DECIMAL(4,1) CHECK (Hours >= 0),
+    PRIMARY KEY (Essn, Pno),
+    FOREIGN KEY (Essn)
+        REFERENCES Employee(Ssn),
+    FOREIGN KEY (Pno)
+        REFERENCES Project(Pnumber)
 );
