@@ -37,6 +37,16 @@ PRIMARY KEY (Dnumber, Dlocation),
 
     FOREIGN KEY (Dnumber)
         REFERENCES Department(Dnumber)
+);
+///////////////////////////////
+//Project
+CREATE TABLE Project
+(
+    Pnumber INT PRIMARY KEY,
+    Pname VARCHAR(50) NOT NULL UNIQUE,
+    Plocation VARCHAR(50),
+    Dnum INT NOT NULL,
 
-
+    FOREIGN KEY (Dnum)
+        REFERENCES Department(Dnumber)
 );
