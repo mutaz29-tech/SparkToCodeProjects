@@ -62,3 +62,18 @@ CREATE TABLE Works_On
     FOREIGN KEY (Pno)
         REFERENCES Project(Pnumber)
 );
+/////////////////////////////////
+//Dependent
+CREATE TABLE Dependent
+(
+    Essn CHAR(9),
+    Dependent_name VARCHAR(30),
+    Sex CHAR(1) CHECK (Sex IN ('M','F')),
+    Bdate DATE,
+    Relationship VARCHAR(20),
+
+    PRIMARY KEY (Essn, Dependent_name),
+
+    FOREIGN KEY (Essn)
+        REFERENCES Employee(Ssn)
+);
