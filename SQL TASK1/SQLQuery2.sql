@@ -27,3 +27,16 @@ CREATE TABLE Employee
     Dno INT NOT NULL,
     Super_ssn CHAR(9)
 );
+//////////////////////////////////
+//Dept_Locations
+CREATE TABLE Dept_Locations
+(
+Dnumber  INT NOT NULL,
+Dlocation VARCHAR(40) NOT NULL,
+PRIMARY KEY (Dnumber, Dlocation),
+
+    FOREIGN KEY (Dnumber)
+        REFERENCES Department(Dnumber)
+
+
+);
