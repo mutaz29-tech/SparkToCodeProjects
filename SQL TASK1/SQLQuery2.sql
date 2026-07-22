@@ -149,3 +149,11 @@ WHERE Ssn='222222222';
 UPDATE Project
 SET ProjectLocation='Salalah'
 WHERE ProjectNumber=102;
+////
+//update 4
+
+
+UPDATE Works_On
+SET Hours=30
+WHERE EmployeeSSN='222222222'
+AND ProjectNumber=102;
