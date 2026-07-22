@@ -1,30 +1,5 @@
 <Solution>
-  <Configurations>
-    <BuildType Name="Debug" />
-    <BuildType Name="Default" />
-    <BuildType Name="Release" />
-  </Configurations>
-  <Project Path="Csharpseesion1/Csharpseesion1.csproj">
-    <BuildType Solution="Default|*" Project="Release" />
-    <Build Solution="Default|*" Project="false" />
-  </Project>
-  <Project Path="Csharpseesion3/Csharpseesion3.csproj" Id="1927c272-3540-4507-a41b-22cc6e680498">
-    <BuildType Solution="Default|*" Project="Release" />
-    <Build Solution="Default|*" Project="false" />
-  </Project>
-  <Project Path="Csharpseesion5/Csharpseesion5.csproj" Id="1b54c848-1c96-445a-8d80-4ba33abfdeb6">
-    <BuildType Solution="Default|*" Project="Release" />
-    <Build Solution="Default|*" Project="false" />
-  </Project>
-  <Project Path="Csharpsession4/Csharpsession4.csproj" Id="35990b7a-96f6-4835-897e-3150c200c40b">
-    <BuildType Solution="Default|*" Project="Release" />
-    <Build Solution="Default|*" Project="false" />
-  </Project>
-  <Project Path="SQL TASK1/SQL TASK1.ssmssqlproj" Type="4f2e2c19-372f-40d8-9fa7-9d2138c6997a">
-    <BuildType Project="Default" />
-    <Platform Project="?" />
-    <Build Project="false" />
-  </Project>
+
 
   <Project Path="Task1/Task1.csproj" Id="f2361436-27e8-4baa-9593-28667e6b474e">
     <BuildType Solution="Default|*" Project="Release" />
