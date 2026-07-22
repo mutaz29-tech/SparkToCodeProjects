@@ -97,3 +97,15 @@ UPDATE Department
 SET ManagerSSN='111111111',
     ManagerStartDate='2023-01-01'
 WHERE DeptNumber=1;
+///////////////
+///* Insert Employees with Supervisor */
+
+INSERT INTO Employee
+VALUES
+('222222222','Sara','B','Ali',
+ 'Muscat','F','1992-08-10',
+ 55000,1,'111111111'),
+
+('333333333','Ahmed','C','Khan',
+ 'Seeb','M','1995-11-21',
+ 50000,2,'111111111');
