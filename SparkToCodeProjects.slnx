@@ -1,21 +1,24 @@
 <Solution>
-  <Folder Name="/Solution Items/">
-    <File Path="DatabaseTasks/Task1Air.drawio.png" />
-    <File Path="DatabaseTasks/_CollegeManagementSystem .drawio.png" />
-    <File Path="DatabaseTasks/_Company Database.drawio.png" />
-    <File Path="MapTask/Airline Information System  map.jpeg" />
-    <File Path="MapTask/College Management System map.jpeg" />
-    <File Path="MapTask/Company Database map.jpeg" />
-  </Folder>
-  <Project Path="Csharpseesion1/Csharpseesion1.csproj" />
-  <Project Path="Csharpseesion3/Csharpseesion3.csproj" Id="1927c272-3540-4507-a41b-22cc6e680498" />
-  <Project Path="Csharpseesion5/Csharpseesion5.csproj" Id="1b54c848-1c96-445a-8d80-4ba33abfdeb6" />
-  <Project Path="Csharpsession4/Csharpsession4.csproj" Id="35990b7a-96f6-4835-897e-3150c200c40b" />
-  <Project Path="OOP_Task2/OOP_Task2.csproj" Id="0b24cc67-4561-4d73-bdec-36a4b8b394b6" />
 
-  <Project Path="Task1/Task1.csproj" Id="f2361436-27e8-4baa-9593-28667e6b474e" />
-  <Project Path="Task2/Task2.csproj" Id="298b50f5-89fc-4525-8349-a9c977bb2dd3" />
-  <Project Path="Task3solution/Task3solution.csproj" Id="04aac73a-a7a0-4a44-8184-c4b97e8c9bf7" />
-  <Project Path="Task4solution/Task4solution.csproj" Id="f62b6d56-d210-45b2-9159-663c2413572d" />
-  <Project Path="Task5soluation/Task5soluation.csproj" Id="d958142d-f380-499f-abf1-7aff2de1178c" />
+
+  <Project Path="Task1/Task1.csproj" Id="f2361436-27e8-4baa-9593-28667e6b474e">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
+  <Project Path="Task2/Task2.csproj" Id="298b50f5-89fc-4525-8349-a9c977bb2dd3">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
+  <Project Path="Task3solution/Task3solution.csproj" Id="04aac73a-a7a0-4a44-8184-c4b97e8c9bf7">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
+  <Project Path="Task4solution/Task4solution.csproj" Id="f62b6d56-d210-45b2-9159-663c2413572d">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
+  <Project Path="Task5soluation/Task5soluation.csproj" Id="d958142d-f380-499f-abf1-7aff2de1178c">
+    <BuildType Solution="Default|*" Project="Release" />
+    <Build Solution="Default|*" Project="false" />
+  </Project>
 </Solution>
