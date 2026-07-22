@@ -167,3 +167,7 @@ AND DependentName='Mariam';
 --//Delete 1
 DELETE FROM Employee
 WHERE Ssn='222222222';
+//delete 2
+DELETE FROM Department_Location
+WHERE DeptNumber=1
+AND Location='Salalah';
