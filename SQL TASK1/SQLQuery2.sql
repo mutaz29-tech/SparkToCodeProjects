@@ -157,3 +157,9 @@ UPDATE Works_On
 SET Hours=30
 WHERE EmployeeSSN='222222222'
 AND ProjectNumber=102;
+
+//update 5
+UPDATE Dependent
+SET Relationship='Child'
+WHERE EmployeeSSN='222222222'
+AND DependentName='Mariam';
