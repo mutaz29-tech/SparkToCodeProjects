@@ -85,3 +85,8 @@ FOREIGN KEY (ManagerSSN)
 REFERENCES Employee(Ssn)
 ///////////////////////
 //SECTION 2 — SAMPLE DATA (INSERTS)
+/* Insert Departments */
+INSERT INTO Department
+VALUES
+(1,'Research',0,NULL,NULL),
+(2,'Administration',0,NULL,NULL);
