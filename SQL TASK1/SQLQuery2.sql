@@ -90,3 +90,10 @@ INSERT INTO Department
 VALUES
 (1,'Research',0,NULL,NULL),
 (2,'Administration',0,NULL,NULL);
+//////////////////////////////
+///* Assign Manager to Department */
+
+UPDATE Department
+SET ManagerSSN='111111111',
+    ManagerStartDate='2023-01-01'
+WHERE DeptNumber=1;
