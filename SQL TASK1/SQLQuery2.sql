@@ -83,3 +83,5 @@ ALTER TABLE Department
 ADD CONSTRAINT FK_Department_Manager
 FOREIGN KEY (ManagerSSN)
 REFERENCES Employee(Ssn)
+///////////////////////
+//SECTION 2 — SAMPLE DATA (INSERTS)
