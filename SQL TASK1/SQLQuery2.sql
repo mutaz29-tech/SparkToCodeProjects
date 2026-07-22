@@ -163,3 +163,7 @@ UPDATE Dependent
 SET Relationship='Child'
 WHERE EmployeeSSN='222222222'
 AND DependentName='Mariam';
+--//
+--//Delete 1
+DELETE FROM Employee
+WHERE Ssn='222222222';
