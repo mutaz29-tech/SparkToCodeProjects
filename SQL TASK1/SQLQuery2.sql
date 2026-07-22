@@ -132,3 +132,15 @@ INSERT INTO Dependent
 VALUES
 ('222222222','Mariam','F',
  '2018-07-15','Daughter');
+ /////////////////
+ //update 1
+UPDATE Employee
+SET Salary = Salary + 5000
+WHERE Ssn='222222222';
+////////////////////////
+//update 2
+
+
+UPDATE Employee
+SET DeptNumber=2
+WHERE Ssn='222222222';
