@@ -109,3 +109,26 @@ VALUES
 ('333333333','Ahmed','C','Khan',
  'Seeb','M','1995-11-21',
  50000,2,'111111111');
+
+ ////////////////// Insert Remaining Records
+ ///* Insert Department Locations */
+INSERT INTO Department_Location VALUES (1,'Muscat');
+INSERT INTO Department_Location VALUES (1,'Salalah');
+
+/* Insert Projects */
+INSERT INTO Project
+VALUES
+(101,'Payroll System','Muscat',2),
+(102,'AI Research Platform','Muscat',1);
+
+/* Insert Works_On Records */
+INSERT INTO Works_On
+VALUES
+('222222222',102,25.5),
+('333333333',101,18);
+
+/* Insert Dependents */
+INSERT INTO Dependent
+VALUES
+('222222222','Mariam','F',
+ '2018-07-15','Daughter');
