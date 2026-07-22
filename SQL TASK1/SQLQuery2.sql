@@ -171,3 +171,13 @@ WHERE Ssn='222222222';
 DELETE FROM Department_Location
 WHERE DeptNumber=1
 AND Location='Salalah';
+-----------------
+  ///SECTION 5 - VERIFICATION QUERIES
+
+
+SELECT * FROM Department;
+SELECT * FROM Employee;
+SELECT * FROM Project;
+SELECT * FROM Works_On;
+SELECT * FROM Dependent;
+SELECT * FROM Department_Location;
